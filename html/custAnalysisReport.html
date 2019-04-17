@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../css/icons-extra.css">
+		<link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.css">
+		<script src="../js/mui.js"></script>
+		<style>
+			html,
+			body {
+				background-color: white;
+			}
+			.title {
+				width: 100%;
+				height: 30px;
+				background-color: darkgray;
+				border-top-left-radius: 15px;
+				border-top-right-radius: 15px;
+				padding-left: 10px;
+				padding-top: 5px;
+				float: left;
+				margin-bottom: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: #47BAFE;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: white;">
+				<span style="font-size: 15px;">返回</span>
+			</a>
+			<h1 class="mui-title" style="color: white;">客户分析</h1>
+		</header>
+		<div class="mui-content" style="margin-left: 10px; margin-right: 10px; background-color: white;">
+			<div style="height: 30%;border-bottom: 2px gray solid; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; margin: 10px 0px; display: inline-block;">
+				<div class="title">
+					<a style="width: 100%; color: white;">
+						<span>客户健康度扫描</span>
+					</a>
+				</div>
+				<div style="width: 100%; padding: 5px; text-align: center;">
+					<span class="fa fa-star" style="font-size: 18px;"></span>
+					<span class="fa fa-star" style="font-size: 18px;"></span>
+					<span class="fa fa-star" style="font-size: 18px;"></span>
+					<span class="fa fa-star" style="font-size: 18px;"></span>
+					<span class="fa fa-star-o" style="font-size: 18px;"></span>
+				</div>
+				<div style="width: 100%; padding: 5px; text-align: left;">
+					<div style="width:40px; float: left;">
+						<span class="fa fa-smile-o" style="font-size: 30px; color: #47BAFE;"></span>
+					</div>
+					<div style="width: 90%; float: right;">
+						<span style="font-size: 15px;">客户资源分布比较多元，且平均资产较高，大额产品销售潜力较大</span>
+					</div>
+				</div>
+				<div style="width: 100%; padding: 5px; text-align: left;">
+					<div style="width:40px; float: left;">
+						<span class="fa fa-exclamation-triangle" style="font-size: 30px; color: #47BAFE;"></span>
+					</div>
+					<div style="width: 90%; float: right;">
+						<span style="font-size: 15px;">客户资源的平均年龄较大，需加强年轻客户的经营</span>
+					</div>
+				</div>
+			</div>
+			<div style="height: 50%; text-align: center;">
+				<div class="title">
+					<a style="width: 100%; color: white;">
+						<span>客户画像</span>
+					</a>
+				</div>
+				
+				<div style="width: 50%; float: left;">
+					<h4>性别分布</h4>
+					<div id="pieChart1" style="height: 150px; width: 100%; margin: 0px; padding: 0px;"></div>
+				</div>
+				
+				<div style="width: 50%; float: left;">
+					<h4>城市分布</h4>
+					<div id="pieChart2" style="height: 150px; width: 100%; margin: 0px; padding: 0px;"></div>
+				</div>
+				
+				<div style="width: 50%; float: left;">
+					<h4>年龄分布</h4>
+					<div id="pieChart3" style="height: 150px; width: 100%; margin: 0px; padding: 0px;"></div>
+				</div>
+				
+				<div style="width: 50%; float: left;">
+					<h4>资产分布</h4>
+					<div id="pieChart4" style="height: 150px; width: 100%; margin: 0px; padding: 0px;"></div>
+				</div>
+			</div>
+			<div style="height: 20%; text-align: center;">
+				<h4>微信昵称词云</h4>
+				<img src="../images/weixinnicheng.png" />
+			</div>
+		</div>
+		<script src="../libs/echarts/echarts-all.js"></script>
+		<script>
+			(function($, doc) {
+				$.init();
+				//阻尼系数
+				var deceleration = mui.os.ios?0.003:0.0009;
+				$('.mui-scroll-wrapper').scroll({
+					bounce: false,
+					indicators: true, //是否显示滚动条
+					deceleration:deceleration
+				});
+				$.plusReady(function() {
+					var chartOption1 = {
+						calculable: false,
+						series: [{
+							name: '性别分布',
+							type: 'pie',
+							radius: '90%',
+							center: ['50%', '50%'],
+							itemStyle : {
+								normal : {
+									label : {
+										position : 'inner',
+										formatter : function (params) {                         
+										  return params.name+":"+params.value +"\n\r(" + (params.percent - 0).toFixed(0) + '%)'
+										}
+									},
+									labelLine : {
+										show : false
+									}
+								},
+								emphasis : {
+									label : {
+										show : true,
+										formatter : "{b}\n{d}%"
+									}
+								}
+							},
+							data: [{
+								value: 388,
+								name: '男'
+							}, {
+								value: 122,
+								name: '女'
+							}]
+						}]
+					};
+					var chartOption2 = {
+						calculable: false,
+						series: [{
+							name: '城市分布',
+							type: 'pie',
+							radius: '90%',
+							center: ['50%', '50%'],
+							itemStyle : {
+								normal : {
+									label : {
+										position : 'inner',
+										formatter : function (params) {                         
+										  return params.name+":"+params.value +"\n\r(" + (params.percent - 0).toFixed(0) + '%)'
+										}
+									},
+									labelLine : {
+										show : false
+									}
+								},
+								emphasis : {
+									label : {
+										show : true,
+										formatter : "{b}\n{d}%"
+									}
+								}
+							},
+							data: [{
+								value: 188,
+								name: '上海'
+							}, {
+								value: 166,
+								name: '北京'
+							}, {
+								value: 100,
+								name: '广州'
+							}, {
+								value: 166,
+								name: '深圳'
+							}]
+						}]
+					};
+					var chartOption3 = {
+						calculable: false,
+						series: [{
+							name: '年龄分布',
+							type: 'pie',
+							radius: '90%',
+							center: ['50%', '50%'],
+							itemStyle : {
+								normal : {
+									label : {
+										position : 'inner',
+										formatter : function (params) {                         
+										  return params.name+":"+params.value +"\n\r(" + (params.percent - 0).toFixed(0) + '%)'
+										}
+									},
+									labelLine : {
+										show : false
+									}
+								},
+								emphasis : {
+									label : {
+										show : true,
+										formatter : "{b}\n{d}%"
+									}
+								}
+							},
+							data: [{
+								value: 166,
+								name: '>80后'
+							},{
+								value: 288,
+								name: '80后'
+							}, {
+								value: 222,
+								name: '90后'
+							}, {
+								value: 333,
+								name: '<90后'
+							}]
+						}]
+					};
+					var chartOption4 = {
+						calculable: false,
+						series: [{
+							name: '资产分布',
+							type: 'pie',
+							radius: '90%',
+							center: ['50%', '50%'],
+							itemStyle : {
+								normal : {
+									label : {
+										position : 'inner',
+										formatter : function (params) {                         
+										  return params.name+":"+params.value +"\n\r(" + (params.percent - 0).toFixed(0) + '%)'
+										}
+									},
+									labelLine : {
+										show : false
+									}
+								},
+								emphasis : {
+									label : {
+										show : true,
+										formatter : "{b}\n{d}%"
+									}
+								}
+							},
+							data: [{
+								value: 5000,
+								name: '理财'
+							}, {
+								value: 10000,
+								name: '房产'
+							}, {
+								value: 8000,
+								name: '储蓄'
+							}]
+						}]
+					};
+					var pieChartDiv1 = doc.getElementById('pieChart1');
+					var pieChart1 = echarts.init(pieChartDiv1);
+					pieChart1.setOption(chartOption1);
+					
+					var pieChartDiv2 = doc.getElementById('pieChart2');
+					var pieChart2 = echarts.init(pieChartDiv2);
+					pieChart2.setOption(chartOption2);
+					
+					var pieChartDiv3 = doc.getElementById('pieChart3');
+					var pieChart3 = echarts.init(pieChartDiv3);
+					pieChart3.setOption(chartOption3);
+					
+					var pieChartDiv4 = doc.getElementById('pieChart4');
+					var pieChart4 = echarts.init(pieChartDiv4);
+					pieChart4.setOption(chartOption4);
+				});
+			}(mui, document));
+		</script>
+	</body>
+
+</html>

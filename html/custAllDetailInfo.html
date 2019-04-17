@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../css/icons-extra.css">
+		<link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.css">
+		<!--App自定义的css-->
+		<!--<link rel="stylesheet" type="text/css" href="../css/app.css"/>-->
+		<style>
+			html,
+			body {
+				background-color: white;
+			}
+			.hboy-img {
+				padding-left: 30px;
+			}
+			.hboy-img p img {
+				width: 15%;
+				margin: 5px 15px 5px 0px;
+			}
+			.hboy-status {
+				width: 80px;
+				background-color: darkgray;
+				color: white;
+				text-align: center;
+				float: right;
+				border-radius: 6px;
+			}
+			.baseInfo {
+				width: 75%;
+				font-size: 15px;
+			}
+			.baseInfo p span {
+				font-size: 15px;
+				color: #000000;
+				padding-left: 10px;
+			}
+			.baseInfo p {
+				padding-left: 15px;
+			}
+			.action div{
+				float: left;
+				width: 25%;
+				text-align: center;
+				padding: 5px;
+			}
+			.baoxianInfo ul li {
+				padding: 2px 15px;
+			}
+			.baoxianInfo ul li div {
+				float: left;
+			}
+			.baoxianInfo ul li div span {
+				font-size: 15px;
+			}
+			.hboy-title {
+				text-align: center;
+				background-color: #47BAFE;;
+				color: white;
+				padding: 3px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: #47BAFE;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: white;">
+				<span style="font-size: 15px;">返回</span>
+			</a>
+			<h1 class="mui-title" style="color: white;">客户罗盘</h1>
+			<a class="mui-icon mui-icon-right-nav mui-pull-right" style="color: white;">
+				<span style="font-size: 15px;">编辑</span>
+			</a>
+		</header>
+		<div class="mui-content" style="background-color: white; height: 90%; padding-bottom: 45px;">
+			<div>
+				<div style="display: flex; margin: 10px;">
+					<div style="width: 70px; height: 70px; border-radius: 50%; border: 1px gray solid; text-align: center; padding: 5px 5px; margin-top: 15px;">
+						<img src="../images/qq.png" style="width: 60px; height: 60px;" />
+					</div>
+					<div class="baseInfo">
+						<p>
+							<span>张三丰</span>
+							<span>上海</span>
+							<span>男性</span>
+							<span>30岁</span>
+							<span>房地产行业</span>
+							<span>本科</span>
+							<span>已婚有小孩</span>
+							<span>有房有车</span>
+						</p>
+						<p>
+							<span class="mui-icon mui-icon-phone"></span>
+							<span>13999999999</span>
+						</p>
+						<p>
+							<span class="mui-icon mui-icon-weixin"></span>
+							<span>关联微信：流浪的风</span>
+						</p>
+					</div>
+				</div>
+				<hr />
+				<div class="action">
+					<div style="color: #47BAFE;">
+						<span class="mui-icon fa fa-smile-o"></span>
+						<span>接触</span>
+					</div>
+					<div style="color: #47BAFE;">
+						<span class="mui-icon fa fa-weixin"></span>
+						<span>互动</span>
+					</div>
+					<div style="color: gray;">
+						<span class="mui-icon fa fa-check-square-o"></span>
+						<span>成交</span>
+					</div>
+					<div style="color: gray;">
+						<span class="mui-icon fa fa-check-circle-o"></span>
+						<span>复购</span>
+					</div>
+				</div>
+				<hr />
+				<div class="baoxianInfo">
+					<p style="color: #000000; padding-left: 15px;">已有2份商业保险</p>
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<div style="width: 100%;">
+								<div style="width: 50%;">
+									<a href="javascript:;">
+										<span class="mui-icon mui-icon-extra mui-icon-extra-cart"></span>
+										<span style="color: #000000;">少儿教育金保险</span>
+									</a>
+								</div>
+								<div style="width: 25%; text-align: right;">
+									<span>50万</span>
+								</div>
+								<div style="width: 25%; text-align: right;">
+									<span>30年</span>
+								</div>
+							</div>
+						</li>
+						<li class="mui-table-view-cell">
+							<div style="width: 100%;">
+								<div style="width: 50%;">
+									<a href="javascript:;">
+										<span class="mui-icon mui-icon-extra mui-icon-extra-cart"></span>
+										<span style="color: #000000;">平安重大疾病险</span>
+									</a>
+								</div>
+								<div style="width: 25%; text-align: right;">
+									<span>200万</span>
+								</div>
+								<div style="width: 25%; text-align: right;">
+									<span>2020/03/25</span>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div style="padding: 10px;">
+					<div style="border-bottom: 1px gray solid;">
+						<p style="color: #47BAFE;">雪豹分关键预测因素</p>
+					</div>
+					<div style="display: inline-flex;">
+						<div style="width: 100%; border-right: 1px gray solid;">
+							<p style="color: #47BAFE;">
+								<span class="mui-icon fa fa-heart"></span>
+								<span class="mui-icon fa fa-heart"></span>
+								<span class="mui-icon fa fa-heart"></span>
+								<span style="color: #000000;">近期曾主动询问产品情况</span>
+							</p>
+							<p style="color: #47BAFE;">
+								<span class="mui-icon fa fa-heart"></span>
+								<span class="mui-icon fa fa-heart"></span>
+								<span class="mui-icon fa fa-heart-o"></span>
+								<span style="color: #000000;">家中刚添一名宝宝</span>
+							</p>
+							<p style="color: #47BAFE;">
+								<span class="mui-icon fa fa-heart"></span>
+								<span class="mui-icon fa fa-heart"></span>
+								<span class="mui-icon fa fa-heart-o"></span>
+								<span style="color: #000000;">收入较高，有房有车</span>
+							</p>
+						</div>
+						<div style="width: 45%;display: inline-flex; text-align: center; padding: 20px;">
+							<div style="width: 50%;">
+								<img src="../images/xuebao.png" style="width: 100%;" />
+							</div>
+							<div style="width: 50%;">
+								<p style="color: #000000;">雪豹分</p>
+								<p style="color: #47BAFE; font-size: 20px; font-weight: bold;">95</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div style="padding: 5px 10px;">
+				<div class="hboy-title"><span>销售时机</span></div>
+				<div>
+					<p style="color: #000000;">
+						<span>共找到3条销售时机（已处理1条）</span>
+						<span style="float: right;">行动</span>
+					</p>
+					<p style="color: #47BAFE;">
+						<span class="mui-icon mui-icon-extra mui-icon-extra-lamp"></span>
+						<span style="color: #000000;">工作变动</span>
+						<span class="mui-icon fa fa-plus-circle" style="float: right; font-size: 25px;"></span>
+					</p>
+					<p style="color: #47BAFE;">
+						<span class="mui-icon mui-icon-extra mui-icon-extra-lamp"></span>
+						<span style="color: #000000;">理财意向高</span>
+						<span class="mui-icon fa fa-plus-circle" style="float: right; font-size: 25px;"></span>
+					</p>
+					<p style="color: #47BAFE;">
+						<span class="mui-icon mui-icon-extra mui-icon-extra-lamp"></span>
+						<span>医院频率高</span>
+						<span class="mui-icon fa fa-plus-circle" style="float: right; color: lightslategray; font-size: 25px;"></span>
+					</p>
+				</div>
+			</div>
+			
+			<div style="padding: 5px 10px;">
+				<div class="hboy-title"><span>接触历史</span></div>
+				<div>
+					<p style="color: #47BAFE;">
+						<span class="mui-icon mui-icon-extra mui-icon-extra-calendar"></span>
+						<span style="color: #000000;">2019/01/01 初次接触，宣传保险知识</span>
+					</p>
+					<p style="color: #47BAFE;">
+						<span class="mui-icon mui-icon-extra mui-icon-extra-calendar"></span>
+						<span style="color: #000000;">2019/01/10 微信沟通</span>
+					</p>
+					<p style="color: #47BAFE;">
+						<span class="mui-icon mui-icon-extra mui-icon-extra-calendar"></span>
+						<span>2019/01/25 线下拜访</span>
+						<span style="color: white; float: right; background-color: #47BAFE; padding: 0px 5px;">语音笔记</span>
+					</p>
+				</div>
+			</div>
+			
+			<div style="padding: 5px 10px;">
+				<div class="hboy-title"><span>社交媒体动态</span></div>
+				<div>
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell mui-media">
+							<div style="color: #47BAFE;">
+								<span class="mui-icon mui-icon-chatboxes"></span>
+							</div>
+							<div class="hboy-img">
+								<p>
+									<span style="color: black;">春暖花开,带俩宝出门踏春</span>
+									<span style="float: right;">1小时前来自微信</span>
+								</p>
+								<p>
+									<img src="../images/shuijiao.jpg" />
+									<img src="../images/cbd.jpg" />
+									<img src="../images/muwu.jpg" />
+									<img src="../images/yuantiao.jpg" />
+								</p>
+							</div>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+							<div style="color: #47BAFE;">
+								<span class="mui-icon mui-icon-chatboxes" style="color: #47BAFE;"></span>
+							</div>
+							<div class="hboy-img">
+								<p>
+									<span style="color: black;">转发《怎样预防心血管疾病?》</span>
+									<span style="float: right;">1天前来自微博</span>
+								</p>
+							</div>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+							<div style="color: #47BAFE;">
+								<span class="mui-icon mui-icon-chatboxes" style="color: #47BAFE;"></span>
+							</div>
+							<div class="hboy-img">
+								<p>
+									<span style="color: black;">出席伦敦金融城和深圳市金融科技合作论坛，现场组织很到位</span>
+									<span style="float: right;">1天前来自微博</span>
+								</p>
+							</div>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+			
+
+		</div>
+		<div>
+			<nav class="mui-bar mui-bar-tab" id="nav">
+				<a id="action_tel" class="mui-tab-item mui-active">
+					<span class="mui-icon mui-icon-phone" style="color: #47BAFE;"></span>
+					<span class="mui-tab-label">电话联系</span>
+				</a>
+				<a id="action_weixin" class="mui-tab-item">
+					<span class="mui-icon fa fa-weixin" style="color: #4CD964;"></span>
+					<span class="mui-tab-label">微信联系</span>
+				</a>
+				<a id="action_love" class="mui-tab-item">
+					<span class="mui-icon fa fa-heart" style="color: #FF0000;"></span>
+					<span class="mui-tab-label">重点客户</span>
+				</a>
+			</nav>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			(function($, doc) {
+				$.init();
+				$.plusReady(function() {
+				});
+			})(mui, document);
+		</script>
+	</body>
+
+</html>

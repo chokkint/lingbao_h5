@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/mui.js"></script>
+		<link rel="stylesheet" href="../css/mui.css">
+		<link rel="stylesheet" href="../css/icons-extra.css">
+		<style type="text/css">
+			.nearsite-message {
+				display: inline-block;
+				clear: both;
+				margin: 10px;
+				width: 100%;
+			}
+
+			.nearsite-message .avatar {
+				float: left;
+				width: 20%;
+				height: 30px;
+				border-radius: 50%;
+			}
+
+			.nearsite-message .content {
+				width: 75%;
+				float: left;
+				background: #fff;
+				margin: 0 10px 10px 10px;
+				padding: 10px;
+				border-radius: 7px;
+				max-width: 90%;
+				position: relative;
+				min-height: 20px;
+				font-size: 25px;
+			}
+
+			.nearsite-message .content ul li {
+				padding: 10px;
+			}
+
+			.nearsite-message .content img {
+				width: 100%;
+			}
+
+			.nearsite-message .triangle {
+				height: 0px;
+				width: 0px;
+				border-width: 8px;
+				border-style: solid;
+				position: absolute;
+				top: 6px;
+				border-color: transparent #fff transparent transparent;
+				left: -16px;
+			}
+
+			.vertbar {
+				width: 1px;
+				height: 150px;
+				background-color: white;
+				margin-top: -15%;
+				margin-left: 80px;
+				border: 2px dashed;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="mui-content" style="padding: 10%;">
+			<header class="mui-bar mui-bar-nav" style="background-color: #47BAFE;">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: white;"></a>
+				<h1 class="mui-title" style="color: white;">行动日程</h1>
+			</header>
+			<div style="height: 70%; font-size: 40px;">
+				<div class="nearsite-message">
+					<div class="avatar">
+						<span>4月1号</span>
+					</div>
+					<div class="content">
+						<div class="triangle"></div>
+						<h2>2个行动日程</h2>
+						<ul>
+							<li>拜访张先生,地点:XXX</li>
+							<li>线上联系张先生</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="vertbar"></div>
+
+				<div class="nearsite-message">
+					<div class="avatar">
+						<span>4月2号</span>
+					</div>
+					<div class="content">
+						<div class="triangle"></div>
+						<h2>3个行动日程</h2>
+						<ul>
+							<li>线上联系李小姐,约时间见面</li>
+							<li>线上联系赵先生,约时间见面</li>
+							<li>拜访张先生，地点:XXX</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="vertbar"></div>
+
+				<div class="nearsite-message">
+					<div class="avatar">
+						<span>4月3号</span>
+					</div>
+					<div class="content">
+						<div class="triangle"></div>
+						<h2>2个行动日程</h2>
+						<ul>
+							<li>拜访张先生,地点:XXX</li>
+							<li>线上联系张先生</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="vertbar"></div>
+
+				<div class="nearsite-message">
+					<div class="avatar">
+						<span>4月4号</span>
+					</div>
+					<div class="content">
+						<div class="triangle"></div>
+						<h2>4个行动日程</h2>
+						<ul>
+							<li>线上联系李小姐,约时间见面</li>
+							<li>线上联系赵先生,约时间见面</li>
+							<li>拜访张先生，地点:XXX</li>
+							<li>拜访赵大勇，地点:XXX</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div style="height: 20%; right: 10%; position: absolute; bottom: 0px; top: 92%;">
+				<span class="mui-icon mui-icon-extra mui-icon-extra-calendar" style="font-size: 300%; color: dimgray;"></span>
+				<span style=" font-size: 35px; color: #47BAFE;">同步到日历</span>
+			</div>
+		</div>
+	</body>
+</html>

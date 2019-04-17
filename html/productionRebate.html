@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../css/icons-extra.css">
+		<link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.css">
+		<script src="../js/mui.js"></script>
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+
+			.mui-bar~.mui-content .mui-fullscreen {
+				top: 44px;
+				height: auto;
+			}
+
+			.mui-pull-top-tips {
+				position: absolute;
+				top: -20px;
+				left: 50%;
+				margin-left: -25px;
+				width: 40px;
+				height: 40px;
+				border-radius: 100%;
+				z-index: 1;
+			}
+
+			.mui-bar~.mui-pull-top-tips {
+				top: 24px;
+			}
+
+			.mui-pull-top-wrapper {
+				width: 42px;
+				height: 42px;
+				display: block;
+				text-align: center;
+				background-color: #efeff4;
+				border: 1px solid #ddd;
+				border-radius: 25px;
+				background-clip: padding-box;
+				box-shadow: 0 4px 10px #bbb;
+				overflow: hidden;
+			}
+
+			.mui-pull-top-tips.mui-transitioning {
+				-webkit-transition-duration: 200ms;
+				transition-duration: 200ms;
+			}
+
+			.mui-pull-top-tips .mui-pull-loading {
+				/*-webkit-backface-visibility: hidden;
+				-webkit-transition-duration: 400ms;
+				transition-duration: 400ms;*/
+
+				margin: 0;
+			}
+
+			.mui-pull-top-wrapper .mui-icon,
+			.mui-pull-top-wrapper .mui-spinner {
+				margin-top: 7px;
+			}
+
+			.mui-pull-top-wrapper .mui-icon.mui-reverse {
+				/*-webkit-transform: rotate(180deg) translateZ(0);*/
+			}
+
+			.mui-media-body p {
+				color: black;
+			}
+
+			.hboy-count {
+				margin: 10px auto;
+			}
+
+			.hboy-count div {
+				float: left;
+			}
+
+			.hboy-count div p {
+				padding-left: 20px;
+				text-align: left;
+			}
+
+			.hboy-count div label {
+				font-size: 25px;
+			}
+
+			.mui-pull-bottom-tips {
+				text-align: center;
+				background-color: #efeff4;
+				font-size: 15px;
+				line-height: 40px;
+				color: #777;
+			}
+
+			.mui-pull-top-canvas {
+				overflow: hidden;
+				background-color: #fafafa;
+				box-shadow: 0 4px 10px #bbb;
+				width: 40px;
+				height: 40px;
+				margin: 0 auto;
+			}
+
+			.mui-pull-top-canvas canvas {
+				width: 30px;
+			}
+
+			.mui-slider-indicator.mui-segmented-control {
+				background-color: #efeff4;
+			}
+
+			.mui-slider .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+				border-bottom: 2px solid #007aff;
+			}
+
+			.mui-scroll ul li {
+				height: 40px;
+				text-align: center;
+				padding-top: 10px;
+			}
+
+			.mui-scroll ul li div {
+				float: left;
+			}
+
+			.mui-scroll ul li div p {
+				font-size: 12px;
+				padding-top: 8px;
+			}
+
+			.mui-scroll ul li div button {
+				border: 1px solid #f7f7f7;
+				background-color: #47BAFE;
+				color: white;
+				font-size: 13px;
+				padding: 8px;
+				margin-bottom: 2px;
+			}
+
+			.title {
+				width: 100%;
+				height: 30px;
+				background-color: darkgray;
+				border-top-left-radius: 15px;
+				border-top-right-radius: 15px;
+				padding-left: 10px;
+				padding-top: 5px;
+				float: left;
+				margin-bottom: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: #47BAFE;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: white;">
+				<span style="font-size: 15px;">返回</span>
+			</a>
+			<h1 class="mui-title" style="color: white;">返利订单</h1>
+		</header>
+		<div class="mui-content" style="margin-left: 10px; margin-right: 10px;">
+			<div style="height: 40%; padding: 20px;">
+				<div class="hboy-count">
+					<div style="width: 100%;">
+						<span style="padding-top: 10px;">可提现金额</span>
+						<h3>99.99元</h3>
+						<button class="mui-btn-primary" style="float: right; background-color: #47BAFE;">提现</button>
+					</div>
+				</div>
+				<div class="hboy-count" style="text-align: center;">
+					<div style="width: 50%; display: inline-flex;">
+						<span style="padding-top: 10px;">累计返利</span>
+						<h3>200元</h3>
+					</div>
+					<div style="width: 50%; display: inline-flex;">
+						<span style="padding-top: 10px;">待返利</span>
+						<h3>10元</h3>
+					</div>
+				</div>
+			</div>
+			<div class="title" style="margin-top: 20px;">
+				<a style="width: 100%; color: white;">
+					<span>返利订单</span>
+				</a>
+			</div>
+			<div class="mui-slider mui-fullscreen" style="margin-top: 45%; height: 70%;">
+				<div class="mui-segmented-control mui-slider-indicator mui-segmented-control-inverted" style="width: 100%;">
+					<a class="mui-control-item mui-active" style="width: 50%;" href="#item1mobile">
+						<span>全部</span>
+					</a>
+					<a class="mui-control-item" style="width: 50%;" href="#item2mobile">
+						<span>待返利</span>
+					</a>
+					<a class="mui-control-item" style="width: 50%;" href="#item3mobile">
+						<span>已返利</span>
+					</a>
+					<a class="mui-control-item" style="width: 50%;" href="#item4mobile">
+						<span>已失效</span>
+					</a>
+				</div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell mui-media" style="height: 20%;">
+										<a href="javascript:;">
+											<img class="pull-left" src="../images/shuijiao.jpg" style="width: 45%;">
+											<div class="mui-media-body" style="text-align: left; width: 55%; padding-left: 10px;">
+												<p class="mui-ellipsis">订单号:XXXXXXXXXXX</p>
+												<p class="mui-ellipsis">订单时间:yyyy-mm-dd hh:mm:ss</p>
+												<span>疫苗注射产品名称1</span>
+												<p class="mui-ellipsis">产品描述产品描述</p>
+												<p class="mui-ellipsis"><span>预估返利 10.00元</span><span style="float: right; ">已返利</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media" style="height: 20%;">
+										<a href="javascript:;">
+											<img class="pull-left" src="../images/cbd.jpg" style="width: 45%;">
+											<div class="mui-media-body" style="text-align: left; width: 55%; padding-left: 10px;">
+												<p class="mui-ellipsis">订单号:XXXXXXXXXXX</p>
+												<p class="mui-ellipsis">订单时间:yyyy-mm-dd hh:mm:ss</p>
+												<span>疫苗注射产品名称2</span>
+												<p class="mui-ellipsis">产品描述产品描述</p>
+												<p class="mui-ellipsis"><span>预估返利 10.00元</span><span style="float: right; ">待返利</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media" style="height: 20%;">
+										<a href="javascript:;">
+											<img class="pull-left" src="../images/muwu.jpg" style="width: 45%;">
+											<div class="mui-media-body" style="text-align: left; width: 55%; padding-left: 10px;">
+												<p class="mui-ellipsis">订单号:XXXXXXXXXXX</p>
+												<p class="mui-ellipsis">订单时间:yyyy-mm-dd hh:mm:ss</p>
+												<span>疫苗注射产品名称3</span>
+												<p class="mui-ellipsis">产品描述产品描述</p>
+												<p class="mui-ellipsis"><span>预估返利 10.00元</span><span style="float: right; ">待返利</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media" style="height: 20%;">
+										<a href="javascript:;">
+											<img class="pull-left" src="../images/yuantiao.jpg" style="width: 45%;">
+											<div class="mui-media-body" style="text-align: left; width: 55%; padding-left: 10px;">
+												<p class="mui-ellipsis">订单号:XXXXXXXXXXX</p>
+												<p class="mui-ellipsis">订单时间:yyyy-mm-dd hh:mm:ss</p>
+												<span>疫苗注射产品名称3</span>
+												<p class="mui-ellipsis">产品描述产品描述</p>
+												<p class="mui-ellipsis"><span>预估返利 10.00元</span><span style="float: right; ">待返利</span></p>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell mui-media" style="height: 20%;">
+										<a href="javascript:;">
+											<img class="pull-left" src="../images/muwu.jpg" style="width: 45%;">
+											<div class="mui-media-body" style="text-align: left; width: 55%; padding-left: 10px;">
+												<p class="mui-ellipsis">订单号:XXXXXXXXXXX</p>
+												<p class="mui-ellipsis">订单时间:yyyy-mm-dd hh:mm:ss</p>
+												<span>疫苗注射产品名称1</span>
+												<p class="mui-ellipsis">产品描述产品描述</p>
+												<p class="mui-ellipsis"><span>预估返利 10.00元</span><span style="float: right; ">已返利</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media" style="height: 20%;">
+										<a href="javascript:;">
+											<img class="pull-left" src="../images/shuijiao.jpg" style="width: 45%;">
+											<div class="mui-media-body" style="text-align: left; width: 55%; padding-left: 10px;">
+												<p class="mui-ellipsis">订单号:XXXXXXXXXXX</p>
+												<p class="mui-ellipsis">订单时间:yyyy-mm-dd hh:mm:ss</p>
+												<span>疫苗注射产品名称2</span>
+												<p class="mui-ellipsis">产品描述产品描述</p>
+												<p class="mui-ellipsis"><span>预估返利 10.00元</span><span style="float: right; ">待返利</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media" style="height: 20%;">
+										<a href="javascript:;">
+											<img class="pull-left" src="../images/cbd.jpg" style="width: 45%;">
+											<div class="mui-media-body" style="text-align: left; width: 55%; padding-left: 10px;">
+												<p class="mui-ellipsis">订单号:XXXXXXXXXXX</p>
+												<p class="mui-ellipsis">订单时间:yyyy-mm-dd hh:mm:ss</p>
+												<span>疫苗注射产品名称3</span>
+												<p class="mui-ellipsis">产品描述产品描述</p>
+												<p class="mui-ellipsis"><span>预估返利 10.00元</span><span style="float: right; ">待返利</span></p>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item3mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell mui-media" style="height: 20%;">
+										<a href="javascript:;">
+											<img class="pull-left" src="../images/cbd.jpg" style="width: 45%;">
+											<div class="mui-media-body" style="text-align: left; width: 55%; padding-left: 10px;">
+												<p class="mui-ellipsis">订单号:XXXXXXXXXXX</p>
+												<p class="mui-ellipsis">订单时间:yyyy-mm-dd hh:mm:ss</p>
+												<span>疫苗注射产品名称1</span>
+												<p class="mui-ellipsis">产品描述产品描述</p>
+												<p class="mui-ellipsis"><span>预估返利 10.00元</span><span style="float: right; ">已返利</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media" style="height: 20%;">
+										<a href="javascript:;">
+											<img class="pull-left" src="../images/yuantiao.jpg" style="width: 45%;">
+											<div class="mui-media-body" style="text-align: left; width: 55%; padding-left: 10px;">
+												<p class="mui-ellipsis">订单号:XXXXXXXXXXX</p>
+												<p class="mui-ellipsis">订单时间:yyyy-mm-dd hh:mm:ss</p>
+												<span>疫苗注射产品名称2</span>
+												<p class="mui-ellipsis">产品描述产品描述</p>
+												<p class="mui-ellipsis"><span>预估返利 10.00元</span><span style="float: right; ">已返利</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media" style="height: 20%;">
+										<a href="javascript:;">
+											<img class="pull-left" src="../images/shuijiao.jpg" style="width: 45%;">
+											<div class="mui-media-body" style="text-align: left; width: 55%; padding-left: 10px;">
+												<p class="mui-ellipsis">订单号:XXXXXXXXXXX</p>
+												<p class="mui-ellipsis">订单时间:yyyy-mm-dd hh:mm:ss</p>
+												<span>疫苗注射产品名称3</span>
+												<p class="mui-ellipsis">产品描述产品描述</p>
+												<p class="mui-ellipsis"><span>预估返利 10.00元</span><span style="float: right; ">已返利</span></p>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item4mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell mui-media" style="height: 20%;">
+										<a href="javascript:;">
+											<img class="pull-left" src="../images/yuantiao.jpg" style="width: 45%;">
+											<div class="mui-media-body" style="text-align: left; width: 55%; padding-left: 10px;">
+												<p class="mui-ellipsis">订单号:XXXXXXXXXXX</p>
+												<p class="mui-ellipsis">订单时间:yyyy-mm-dd hh:mm:ss</p>
+												<span>疫苗注射产品名称1</span>
+												<p class="mui-ellipsis">产品描述产品描述</p>
+												<p class="mui-ellipsis"><span>预估返利 10.00元</span><span style="float: right; ">已取消</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media" style="height: 20%;">
+										<a href="javascript:;">
+											<img class="pull-left" src="../images/muwu.jpg" style="width: 45%;">
+											<div class="mui-media-body" style="text-align: left; width: 55%; padding-left: 10px;">
+												<p class="mui-ellipsis">订单号:XXXXXXXXXXX</p>
+												<p class="mui-ellipsis">订单时间:yyyy-mm-dd hh:mm:ss</p>
+												<span>疫苗注射产品名称2</span>
+												<p class="mui-ellipsis">产品描述产品描述</p>
+												<p class="mui-ellipsis"><span>预估返利 10.00元</span><span style="float: right; ">已取消</span></p>
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media" style="height: 20%;">
+										<a href="javascript:;">
+											<img class="pull-left" src="../images/cbd.jpg" style="width: 45%;">
+											<div class="mui-media-body" style="text-align: left; width: 55%; padding-left: 10px;">
+												<p class="mui-ellipsis">订单号:XXXXXXXXXXX</p>
+												<p class="mui-ellipsis">订单时间:yyyy-mm-dd hh:mm:ss</p>
+												<span>疫苗注射产品名称3</span>
+												<p class="mui-ellipsis">产品描述产品描述</p>
+												<p class="mui-ellipsis"><span>预估返利 10.00元</span><span style="float: right; ">已取消</span></p>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			(function($, doc) {
+				$.init();
+				//阻尼系数
+				var deceleration = mui.os.ios ? 0.003 : 0.0009;
+				$('.mui-scroll-wrapper').scroll({
+					bounce: false,
+					indicators: true, //是否显示滚动条
+					deceleration: deceleration
+				});
+				$.plusReady(function() {
+
+				});
+			}(mui, document));
+		</script>
+	</body>
+
+</html>

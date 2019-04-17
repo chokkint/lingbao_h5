@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<style>
+			.content-padded {
+				padding-top: 15px;
+				padding-bottom: 17%;
+				text-align: center;
+				background-color: white;
+				height: 35px;
+			}
+			.content-padded div {
+				float: left;
+			}
+			.content-padded div span {
+				display: block;
+				transform: translateY(50%);
+			} 
+			
+			.mui-content ul li div {
+				float: left;
+			}
+			
+			.mui-content ul li div a img {
+			}
+			 
+			.mui-content ul li div span {
+				display: block;
+				transform: translateY(50%);
+			}
+			.mui-content ul:last-child {
+				box-shadow: 0px 2px 0px 0px grey;
+			}
+			.mui-col-sm-1 {
+				width: 11%;
+			}
+			.mui-col-sm-2 {
+				width: 16%;
+			}
+			.mui-col-sm-3 {
+				width: 26%;
+			}
+			.mui-col-sm-4 {
+				width: 31%;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: #47BAFE;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color:white;font-size: 30px;"></a>
+			<h1 class="mui-title" style="color:white;">导入手机客户</h1>
+		</header>
+		<div class="mui-content" style="padding-top: 31px;">
+			<ul class="mui-table-view" style="text-align: center;">
+				<li class="mui-table-view-cell mui-input-row mui-checkbox mui-media">
+					<div class="mui-col-sm-2"><span>选择</span></div>
+					<div class="mui-col-sm-1"><span>头像</span></div>
+					<div class="mui-col-sm-3"><span>姓名</span></div>
+					<div class="mui-col-sm-4"><span>手机号</span></div>
+					<div class="mui-col-sm-2"><span>曾购买</span></div>
+				</li>
+				<li class="mui-table-view-cell mui-input-row mui-checkbox mui-media">
+					<div class="mui-left mui-col-sm-2">
+						<input name="checkbox" type="checkbox">
+					</div>
+					<div class="mui-col-sm-1">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="images/muwu.jpg">
+						</a>
+					</div>
+					<div class="mui-col-sm-3"><span>张三丰</span></div>
+					<div class="mui-col-sm-4"><span>13728298871</span></div>
+					<div class="mui-right mui-col-sm-2">
+						<input name="checkbox1" type="checkbox" disabled="disabled">
+					</div>
+				</li>
+				<li class="mui-table-view-cell mui-input-row mui-checkbox mui-media">
+					<div class="mui-left mui-col-sm-2">
+						<input name="checkbox" type="checkbox">
+					</div>
+					<div class="mui-col-sm-1">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="images/muwu.jpg">
+						</a>
+					</div>
+					<div class="mui-col-sm-3"><span>李四光</span></div>
+					<div class="mui-col-sm-4"><span>13728298872</span></div>
+					<div class="mui-right mui-col-sm-2">
+						<input name="checkbox1" type="checkbox" disabled="disabled">
+					</div>
+				</li>
+				<li class="mui-table-view-cell mui-input-row mui-checkbox mui-media">
+					<div class="mui-left mui-col-sm-2">
+						<input name="checkbox" type="checkbox" checked="checked">
+					</div>
+					<div class="mui-col-sm-1">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="images/muwu.jpg">
+						</a>
+					</div>
+					<div class="mui-col-sm-3"><span>赵大勇</span></div>
+					<div class="mui-col-sm-4"><span>13728298873</span></div>
+					<div class="mui-right mui-col-sm-2">
+						<input name="checkbox1" type="checkbox" checked="checked" disabled="disabled">
+					</div>
+				</li>
+				<li class="mui-table-view-cell mui-input-row mui-checkbox mui-media">
+					<div class="mui-left mui-col-sm-2">
+						<input name="checkbox" type="checkbox" checked="checked">
+					</div>
+					<div class="mui-col-sm-1">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="images/muwu.jpg">
+						</a>
+					</div>
+					<div class="mui-col-sm-3"><span>宋江</span></div>
+					<div class="mui-col-sm-4"><span>13728298874</span></div>
+					<div class="mui-right mui-col-sm-2">
+						<input name="checkbox1" type="checkbox" disabled="disabled">
+					</div>
+				</li>
+				<li class="mui-table-view-cell mui-input-row mui-checkbox mui-media">
+					<div class="mui-left mui-col-sm-2">
+						<input name="checkbox" type="checkbox" checked="checked">
+					</div>
+					<div class="mui-col-sm-1">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="images/muwu.jpg">
+						</a>
+					</div>
+					<div class="mui-col-sm-3"><span>武行者</span></div>
+					<div class="mui-col-sm-4"><span>13728298875</span></div>
+					<div class="mui-right mui-col-sm-2">
+						<input name="checkbox1" type="checkbox" checked="checked" disabled="disabled">
+					</div>
+				</li>
+				<li class="mui-table-view-cell mui-input-row mui-checkbox mui-media">
+					<div class="mui-left mui-col-sm-2">
+						<input name="checkbox" type="checkbox" checked="checked">
+					</div>
+					<div class="mui-col-sm-1">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="images/muwu.jpg">
+						</a>
+					</div>
+					<div class="mui-col-sm-3"><span>风清扬</span></div>
+					<div class="mui-col-sm-4"><span>13728298876</span></div>
+					<div class="mui-right mui-col-sm-2">
+						<input name="checkbox1" type="checkbox" disabled="disabled">
+					</div>
+				</li>
+				<li class="mui-table-view-cell mui-input-row mui-checkbox mui-media">
+					<div class="mui-left mui-col-sm-2">
+						<input name="checkbox" type="checkbox">
+					</div>
+					<div class="mui-col-sm-1">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="images/muwu.jpg">
+						</a>
+					</div>
+					<div class="mui-col-sm-3"><span>独孤求败</span></div>
+					<div class="mui-col-sm-4"><span>13728298877</span></div>
+					<div class="mui-right mui-col-sm-2">
+						<input name="checkbox1" type="checkbox" disabled="disabled">
+					</div>
+				</li>
+				<li class="mui-table-view-cell mui-input-row mui-checkbox mui-media">
+					<div class="mui-left mui-col-sm-2">
+						<input name="checkbox" type="checkbox" checked="checked">
+					</div>
+					<div class="mui-col-sm-1">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="images/muwu.jpg">
+						</a>
+					</div>
+					<div class="mui-col-sm-3"><span>任逍遥</span></div>
+					<div class="mui-col-sm-4"><span>13728298878</span></div>
+					<div class="mui-right mui-col-sm-2">
+						<input name="checkbox1" type="checkbox" disabled="disabled">
+					</div>
+				</li>
+				<li class="mui-table-view-cell mui-input-row mui-checkbox mui-media">
+					<div class="mui-left mui-col-sm-2">
+						<input name="checkbox" type="checkbox" checked="checked">
+					</div>
+					<div class="mui-col-sm-1">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="images/muwu.jpg">
+						</a>
+					</div>
+					<div class="mui-col-sm-3"><span>令狐冲</span></div>
+					<div class="mui-col-sm-4"><span>13728298879</span></div>
+					<div class="mui-right mui-col-sm-2">
+						<input name="checkbox1" type="checkbox" disabled="disabled" checked="checked">
+					</div>
+				</li>
+				<li class="mui-table-view-cell mui-input-row mui-checkbox mui-media">
+					<div class="mui-left mui-col-sm-2">
+						<input name="checkbox" type="checkbox" checked="checked">
+					</div>
+					<div class="mui-col-sm-1">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="images/muwu.jpg">
+						</a>
+					</div>
+					<div class="mui-col-sm-3"><span>Bruce Lee</span></div>
+					<div class="mui-col-sm-4"><span>13728298880</span></div>
+					<div class="mui-right mui-col-sm-2">
+						<input name="checkbox1" type="checkbox" disabled="disabled">
+					</div>
+				</li>
+			</ul>
+			<div class="content-padded">
+				<div class="mui-input-row mui-checkbox mui-left" style="width: 20%;">
+					<input id="selectAll" type="checkbox">
+					<span style="margin-left: 45px; font-size: 13px; height: 35px; line-height: 35px;">全选</span>
+				</div>
+				<div style="width: 65%; height: 35px; color:#47BAFE; font-size: 13px; line-height: 35px;"><span>共发现999名联系人，已选中<label id="countNum">800</label>人</span></div>
+				<div style="width: 15%;">
+					<button id='telCustImpBtn' class="mui-btn mui-btn-block mui-btn-primary" style="border: 1px solid #f7f7f7;background-color: #47BAFE;padding: 8px;left: -15%;">导入</button>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.js"></script>
+	<script>
+		(function($, doc) {
+			// $.back = function() {};
+			$.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			$.plusReady(function() {
+				var selectAllButton = doc.getElementById('selectAll');
+				var countNumLabel = doc.getElementById('countNum');
+				selectAllButton.addEventListener("change",function(){ 
+					if(this.checked){ 
+						$("input[name='checkbox']").each(function(){ 
+							this.checked=true; 
+	 
+						}); 
+						countNumLabel.innerText = "999";
+					}else{ 
+						$("input[name='checkbox']").each(function(){ 
+							this.checked=false; 
+						countNumLabel.innerText = "0";
+						}); 
+					} 
+				});
+				
+				var telCustImpBtn = doc.getElementById('telCustImpBtn');
+				telCustImpBtn.addEventListener('tap', function(event) {
+					mui.confirm('发现99名联系人可关联客户','关联客户',['去关联', '暂不处理'],function (e) {
+						if(e.index == 0){
+							$.openWindow({
+								url: 'matchTelAndWxCust.html',
+								id: 'matchTelAndWxCust',
+								show: {
+									aniShow: 'pop-in'
+								}
+							});
+						}else{
+							$.openWindow({
+								url: 'indexMenu.html',
+								id: 'indexMenu',
+								show: {
+									aniShow: 'pop-in'
+								}
+							});
+						}
+					});
+				});
+			});
+		}(mui, document));
+	</script>
+</html>

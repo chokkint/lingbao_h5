@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.css">
+		<link rel="stylesheet" href="css/icons-extra.css">
+		<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.css">
+		<style>
+			.paddedBtn button{
+				border: 1px solid #f7f7f7;
+				background-color: #47BAFE;
+				width: 41%;
+				font-size: 15px;
+				height: 40px;
+				padding: 0px;
+				float: left;
+				margin-left: 6%;
+			}
+			/* #close {
+				position: absolute;
+				width: 160px;
+				left: 50%;
+				margin-left: -80px;
+				bottom: 15%;
+				padding: 10px;
+				color: #fff;
+				border-color: #fff;
+			} */
+			.item-logo {
+				width: 100%;
+				height: 100%;
+				position: relative;
+				text-align: center;
+				margin-top: 20%;
+			}
+			.item-logo a {
+				width: 100px;
+				height: 100px;
+				display: block;
+				border: 1px solid darkgrey;
+				text-align: center;
+				line-height: 100px;
+				border-radius: 50%;
+				font-size: 30px;
+				color: #47BAFE;
+				position: absolute;
+				top: 10%;
+			}
+			.animate {
+				position: absolute;
+				left: 0;
+				bottom: 45%;
+				width: 100%;
+				color: #fff;
+				display: -moz-box;
+			}
+			.animate h2 {
+				text-align: center;
+				margin-bottom: 20px;
+			}
+			.animate li {
+				width: 50%;
+				height: 30px;
+				line-height: 30px;
+				list-style: none;
+				font-size: 16px;
+				text-align: right;
+			}
+			.animate li:nth-child(3) {
+				text-align: left;
+				float: right;
+				padding-right: 17px;
+			}
+			.animated {
+				-webkit-animation-duration: 1s;
+				-webkit-animation-play-state: paused;
+				-webkit-animation-fill-mode: both;
+			}
+			.guide-show .bounceInDown {
+				-webkit-animation-name: bounceInDown;
+				-webkit-animation-play-state: running;
+				-webkit-animation-delay: 1s;
+				display: block;
+			}
+			.guide-show .bounceInLeft {
+				-webkit-animation-name: bounceInLeft;
+				display: block;
+				-webkit-animation-play-state: running;
+			}
+			.guide-show .bounceInRight {
+				-webkit-animation-name: bounceInRight;
+				display: block;
+				-webkit-animation-play-state: running;
+				-webkit-animation-delay: 0.5s;
+			}
+			
+			
+			.oauth-area {
+				position: absolute;
+				bottom: -100px;
+				left: 0px;
+				text-align: center;
+				width: 100%;
+				padding: 0px;
+				margin: 0px;
+			}
+			
+			.oauth-area .oauth-btn {
+				display: inline-block;
+				width: 50px;
+				height: 50px;
+				background-size: 30px 30px;
+				background-position: center center;
+				background-repeat: no-repeat;
+				margin: 0px 20px;
+				/*-webkit-filter: grayscale(100%); */
+				border: solid 1px #ddd;
+				border-radius: 25px;
+			}
+			
+			.oauth-area .oauth-btn:active {
+				border: solid 1px #aaa;
+			}
+			
+			.oauth-area .oauth-btn.disabled {
+				background-color: #ddd;
+			}
+			@-webkit-keyframes bounceInDown {
+				0%, 60%, 75%, 90%, 100% {
+					-webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+					animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+				}
+				0% {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -3000px, 0);
+					transform: translate3d(0, -3000px, 0);
+				}
+				60% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 25px, 0);
+					transform: translate3d(0, 25px, 0);
+				}
+				75% {
+					-webkit-transform: translate3d(0, -5px, 0);
+					transform: translate3d(0, -5px, 0);
+				}
+				90% {
+					-webkit-transform: translate3d(0, 3px, 0);
+					transform: translate3d(0, 3px, 0);
+				}
+				100% {
+					-webkit-transform: none;
+					transform: none;
+				}
+			}
+			@-webkit-keyframes bounceInLeft {
+				0%, 60%, 75%, 90%, 100% {
+					-webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+					animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+				}
+				0% {
+					opacity: 0;
+					-webkit-transform: translate3d(-3000px, 0, 0);
+					transform: translate3d(-3000px, 0, 0);
+				}
+				60% {
+					opacity: 1;
+					-webkit-transform: translate3d(25px, 0, 0);
+					transform: translate3d(25px, 0, 0);
+				}
+				75% {
+					-webkit-transform: translate3d(-10px, 0, 0);
+					transform: translate3d(-10px, 0, 0);
+				}
+				90% {
+					-webkit-transform: translate3d(5px, 0, 0);
+					transform: translate3d(5px, 0, 0);
+				}
+				100% {
+					-webkit-transform: none;
+					transform: none;
+				}
+			}
+			@-webkit-keyframes bounceInRight {
+				0%, 60%, 75%, 90%, 100% {
+					-webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+					animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+				}
+				0% {
+					opacity: 0;
+					-webkit-transform: translate3d(3000px, 0, 0);
+					transform: translate3d(3000px, 0, 0);
+				}
+				60% {
+					opacity: 1;
+					-webkit-transform: translate3d(-25px, 0, 0);
+					transform: translate3d(-25px, 0, 0);
+				}
+				75% {
+					-webkit-transform: translate3d(10px, 0, 0);
+					transform: translate3d(10px, 0, 0);
+				}
+				90% {
+					-webkit-transform: translate3d(-5px, 0, 0);
+					transform: translate3d(-5px, 0, 0);
+				}
+				100% {
+					-webkit-transform: none;
+					transform: none;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: white;">
+			<h1 class="mui-title" style="color:white;"></h1>
+			<a class="mui-action-back mui-icon mui-icon-closeempty mui-pull-right" style="color:white;font-size: 30px;"></a>
+		</header>
+		<div class="mui-content" style="background-color: white;">
+			<div class="item-logo" style="background-color: white">
+				<a href="#" style="left: 15%;"><span class="mui-icon-extra mui-icon-extra-peoples" style="font-size: 70px;vertical-align: middle;"></span></a>
+				<div style="color:darkgrey; padding-top: 12%;">
+					<span class="mui-icon fa fa-forward"></span>
+				</div>
+				<a href="#" style="right: 15%;"><span class="mui-icon-extra mui-icon-extra-gold" style="font-size: 70px;vertical-align: middle;"></span></a>
+			</div>
+			
+			<div class="mui-content-padded" style="padding-top: 20%; text-align: center;">
+				<div class=""><a style="color:darkgray;">客户潜力诊断，开启智能销售之旅</a></div>
+			</div>
+			<div class="mui-content-padded" style="padding-top: 20%;">
+				<button id='telImp' class="mui-btn mui-btn-block mui-btn-primary" style="border: 1px solid #f7f7f7;background-color: #47BAFE;"><span class="mui-icon-extra mui-icon-extra-phone" style="font-size: 30px;"></span>手机联系人诊断</button>
+				<button id='wxImp' class="mui-btn mui-btn-block mui-btn-primary" style="border: 1px solid #f7f7f7;background-color: #47BAFE;"><span class="mui-icon mui-icon-weixin" style="font-size: 30px;"></span>微信好友诊断</button>
+			</div>
+			<div class="mui-content-padded" style="padding-top: 9%; padding-bottom: 20%; text-align: center;">
+				<div class="link-area"><a id="gotoMainBtn" style="color:darkgray;">下次导入，先跳过</a></div>
+			</div>
+		</div>
+		<script src="js/mui.js"></script>
+		<script>
+			(function($, doc) {
+				// $.back = function() {};
+				$.init();
+				$.plusReady(function() {
+					var telImpButton = doc.getElementById('telImp');
+					telImpButton.addEventListener('tap', function(event) {
+						$.openWindow({
+							url: 'telCustImp.html',
+							id: 'telCustImp',
+							show: {
+								aniShow: 'pop-in'
+							}
+						});
+					});
+					
+					var wxImpButton = doc.getElementById('wxImp');
+					wxImpButton.addEventListener('tap', function(event) {
+						$.openWindow({
+							url: 'wxCustImp.html',
+							id: 'wxCustImp',
+							show: {
+								aniShow: 'pop-in'
+							}
+						});
+					});
+					
+					var gotoMainBtn = doc.getElementById('gotoMainBtn');
+					gotoMainBtn.addEventListener('tap', function(event) {
+						$.openWindow({
+							url: 'indexMenu.html',
+							id: 'indexMenu',
+							preload: true,
+							show: {
+								aniShow: 'pop-in'
+							},
+							styles: {
+								popGesture: 'hide'
+							},
+							waiting: {
+								autoShow: false
+							}
+						});
+					}, false);
+				});
+			}(mui, document));
+		</script>
+	</body>
+
+</html>

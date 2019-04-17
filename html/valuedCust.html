@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../css/icons-extra.css">
+		<link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.css">
+		<script src="../js/mui.js"></script>
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			.mui-bar~.mui-content .mui-fullscreen {
+				top: 44px;
+				height: auto;
+			}
+			.mui-pull-top-tips {
+				position: absolute;
+				top: -20px;
+				left: 50%;
+				margin-left: -25px;
+				width: 40px;
+				height: 40px;
+				border-radius: 100%;
+				z-index: 1;
+			}
+			.mui-bar~.mui-pull-top-tips {
+				top: 24px;
+			}
+			.mui-pull-top-wrapper {
+				width: 42px;
+				height: 42px;
+				display: block;
+				text-align: center;
+				background-color: #efeff4;
+				border: 1px solid #ddd;
+				border-radius: 25px;
+				background-clip: padding-box;
+				box-shadow: 0 4px 10px #bbb;
+				overflow: hidden;
+			}
+			.mui-pull-top-tips.mui-transitioning {
+				-webkit-transition-duration: 200ms;
+				transition-duration: 200ms;
+			}
+			.mui-pull-top-tips .mui-pull-loading {
+				/*-webkit-backface-visibility: hidden;
+				-webkit-transition-duration: 400ms;
+				transition-duration: 400ms;*/
+				
+				margin: 0;
+			}
+			.mui-pull-top-wrapper .mui-icon,
+			.mui-pull-top-wrapper .mui-spinner {
+				margin-top: 7px;
+			}
+			.mui-pull-top-wrapper .mui-icon.mui-reverse {
+				/*-webkit-transform: rotate(180deg) translateZ(0);*/
+			}
+			
+			.hboy-count {
+				margin: 10px auto;
+			}
+			.hboy-count div{
+				float: left;
+				text-align: center;
+			}
+			.hboy-count div p{
+				padding-left: 20px;
+				text-align: left;
+			}
+			.hboy-count div label{
+				font-size: 25px;
+			}
+			
+			.mui-pull-bottom-tips {
+				text-align: center;
+				background-color: #efeff4;
+				font-size: 15px;
+				line-height: 40px;
+				color: #777;
+			}
+			.mui-pull-top-canvas {
+				overflow: hidden;
+				background-color: #fafafa;
+				box-shadow: 0 4px 10px #bbb;
+				width: 40px;
+				height: 40px;
+				margin: 0 auto;
+			}
+			.mui-pull-top-canvas canvas {
+				width: 30px;
+			}
+			.mui-slider-indicator.mui-segmented-control {
+				background-color: #efeff4;
+			}
+			.mui-slider .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+				border-bottom: 2px solid #007aff;
+			}
+			 
+			.mui-scroll ul li {
+				height: 40px;
+				text-align: center;
+				padding-top: 10px;
+			}
+			.mui-scroll ul li div {
+				float: left;
+			}
+			 
+			.mui-scroll ul li div p {
+				font-size: 12px;
+				padding-top: 8px;
+			}
+			.mui-scroll ul li div button {
+				border: 1px solid #f7f7f7;
+				background-color: #47BAFE;
+				color: white;
+				font-size: 13px;
+				padding: 8px;
+				margin-bottom: 2px;
+			}
+			.mui-col-sm-1 {
+				width: 8%;
+			}
+			.mui-col-sm-2 {
+				width: 16%;
+			}
+			.mui-col-sm-3 {
+				width: 25%;
+			}
+			.mui-col-sm-6 {
+				width: 50%;
+			}
+			.mui-col-sm-9 {
+				width: 76%;
+			}
+			.mui-col-sm-12 {
+				width: 100%;
+			}
+			.title {
+				width: 100%;
+				height: 30px;
+				background-color: darkgray;
+				border-top-left-radius: 15px;
+				border-top-right-radius: 15px;
+				padding-left: 10px;
+				padding-top: 5px;
+				float: left;
+				margin-bottom: 10px;
+			}
+			
+			#topPopover {
+				position: fixed;
+				top: 16px;
+				right: 6px;
+			}
+			.mui-popover {
+				height: 100px;
+			}
+			#topPopover li{
+				height: 30px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: #47BAFE;">
+			<h1 class="mui-title" style="color: white;">客户精选</h1>
+			<a id="gotoMenu" class="mui-action-menu mui-icon mui-icon-plus mui-pull-right" style="color: white;" href="#topPopover"></a>
+		</header>
+		<div class="mui-content" style="margin-left: 10px; margin-right: 10px;">
+			<div style="height: 60%;">
+				<div class="title">
+					<a style="width: 100%; color: white;">
+						<span>客户情况分析</span>
+					</a>
+				</div>
+				<div class="hboy-count">
+					<div style="width: 35%;">
+						<h4 style="padding-top: 10px;">客户跟进情况</h4>
+						<p>潜在客户</p>
+						<label>99</label><span class="mui-badge">人</span>
+						<p>联系中</p>
+						<label>200</label><span class="mui-badge">人</span>
+						<p>已联系</p>
+						<label>200</label><span class="mui-badge">人</span>
+					</div>
+					<div style="width: 1px; border: 1px lightgrey solid; height: 150px; margin-top: 25px;"></div>
+					<div style="width: 60%;">
+						<h4>客户潜力分布-雪豹分</h4>
+						<div id="pieChart" style="height: 150px; width: 100%; margin: 10px; padding: 0px;"></div>
+					</div>
+					<div style="width: 100%; border: 1px lightgrey solid; margin: 5px;"></div>
+					<div style="width: 100%; height: 25px; padding: 0px 5px; border-bottom: 2px gray solid; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+						<a id="gotoCustAnalysisReport"><h5>查看客户分析报告<span class="mui-icon mui-icon-forward" style="font-size: 18px;"></span></h5></a>
+					</div>
+				</div>
+				<div class="title">
+					<a style="width: 100%; color: white;">
+						<span>客户精选</span>
+						<span style="font-size: 13px; float: right;">当前总客户人数：99人</span>
+					</a>
+				</div>
+				<div class="mui-input-row mui-search mui-plus-visible">
+					<input id="search" type="search" class="mui-input-speech mui-input-clear" placeholder="搜索客户姓名">
+				</div>
+			</div>
+			
+			<div class="mui-slider mui-fullscreen" style="margin-top: 102%; height: 50%;">
+				<div class="mui-segmented-control mui-slider-indicator mui-segmented-control-inverted" style="width: 100%;">
+					<a class="mui-control-item mui-active" style="width: 50%;" href="#item1mobile">
+						<span>高潜客户</span>
+					</a>
+					<a class="mui-control-item" style="width: 50%;" href="#item2mobile">
+						<span>所有客户</span>
+					</a>
+				</div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul id="tab_myPlan" class="mui-table-view">
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div style="width: 20%;">
+												<span>姓名</span>
+											</div>
+											<div style="width: 15%;">
+												<span>雪豹分</span><span class="fa fa-caret-down"></span>
+											</div>
+											<div style="width: 35%;">
+												<span>近期动态</span><span class="fa fa-caret-down"></span>
+											</div>
+											<div style="width: 20%;">
+												<span>资产情况</span><span class="fa fa-caret-down"></span>
+											</div>
+											<div style="width: 10%;">
+												<span>行动</span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div style="width: 20%;">
+												<span class="mui-icon mui-icon-contact" style="color: #47BAFE;"></span><span>张三丰</span>
+											</div>
+											<div style="width: 15%;">
+												<span>95</span>
+											</div>
+											<div style="width: 35%;">
+												<span>理财意向高</span>
+											</div>
+											<div style="width: 20%;">
+												<span>AA级</span>
+											</div>
+											<div style="width: 10%;">
+												<span class="mui-icon mui-icon-plus"></span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div style="width: 20%;">
+												<span class="mui-icon mui-icon-contact" style="color: #47BAFE;"></span><span>李小龙</span>
+											</div>
+											<div style="width: 15%;">
+												<span>90</span>
+											</div>
+											<div style="width: 35%;">
+												<span>工作变动</span>
+											</div>
+											<div style="width: 20%;">
+												<span>A级</span>
+											</div>
+											<div style="width: 10%;">
+												<span class="mui-icon mui-icon-plus"></span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div style="width: 20%;">
+												<span class="mui-icon mui-icon-contact" style="color: #47BAFE;"></span><span>高圆圆</span>
+											</div>
+											<div style="width: 15%;">
+												<span>88</span>
+											</div>
+											<div style="width: 35%;">
+												<span>生子</span>
+											</div>
+											<div style="width: 20%;">
+												<span>B级</span>
+											</div>
+											<div style="width: 10%;">
+												<span class="mui-icon mui-icon-plus"></span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div style="width: 20%;">
+												<span class="mui-icon mui-icon-contact" style="color: #47BAFE;"></span><span>关云长</span>
+											</div>
+											<div style="width: 15%;">
+												<span>72</span>
+											</div>
+											<div style="width: 35%;">
+												<span>关注医疗</span>
+											</div>
+											<div style="width: 20%;">
+												<span>C级</span>
+											</div>
+											<div style="width: 10%;">
+												<span class="mui-icon mui-icon-plus"></span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div style="width: 20%;">
+												<span class="mui-icon mui-icon-contact" style="color: #47BAFE;"></span><span>张三丰</span>
+											</div>
+											<div style="width: 15%;">
+												<span>95</span>
+											</div>
+											<div style="width: 35%;">
+												<span>理财意向高</span>
+											</div>
+											<div style="width: 20%;">
+												<span>AA级</span>
+											</div>
+											<div style="width: 10%;">
+												<span class="mui-icon mui-icon-plus"></span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div style="width: 20%;">
+												<span class="mui-icon mui-icon-contact" style="color: #47BAFE;"></span><span>张三丰</span>
+											</div>
+											<div style="width: 15%;">
+												<span>95</span>
+											</div>
+											<div style="width: 35%;">
+												<span>理财意向高</span>
+											</div>
+											<div style="width: 20%;">
+												<span>AA级</span>
+											</div>
+											<div style="width: 10%;">
+												<span class="mui-icon mui-icon-plus"></span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div style="width: 20%;">
+												<span class="mui-icon mui-icon-contact" style="color: #47BAFE;"></span><span>张三丰</span>
+											</div>
+											<div style="width: 15%;">
+												<span>95</span>
+											</div>
+											<div style="width: 35%;">
+												<span>理财意向高</span>
+											</div>
+											<div style="width: 20%;">
+												<span>AA级</span>
+											</div>
+											<div style="width: 10%;">
+												<span class="mui-icon mui-icon-plus"></span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div style="width: 20%;">
+												<span class="mui-icon mui-icon-contact" style="color: #47BAFE;"></span><span>张三丰</span>
+											</div>
+											<div style="width: 15%;">
+												<span>95</span>
+											</div>
+											<div style="width: 35%;">
+												<span>理财意向高</span>
+											</div>
+											<div style="width: 20%;">
+												<span>AA级</span>
+											</div>
+											<div style="width: 10%;">
+												<span class="mui-icon mui-icon-plus"></span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div style="width: 20%;">
+												<span class="mui-icon mui-icon-contact" style="color: #47BAFE;"></span><span>张三丰</span>
+											</div>
+											<div style="width: 15%;">
+												<span>95</span>
+											</div>
+											<div style="width: 35%;">
+												<span>理财意向高</span>
+											</div>
+											<div style="width: 20%;">
+												<span>AA级</span>
+											</div>
+											<div style="width: 10%;">
+												<span class="mui-icon mui-icon-plus"></span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div style="width: 20%;">
+												<span class="mui-icon mui-icon-contact" style="color: #47BAFE;"></span><span>张三丰</span>
+											</div>
+											<div style="width: 15%;">
+												<span>95</span>
+											</div>
+											<div style="width: 35%;">
+												<span>理财意向高</span>
+											</div>
+											<div style="width: 20%;">
+												<span>AA级</span>
+											</div>
+											<div style="width: 10%;">
+												<span class="mui-icon mui-icon-plus"></span>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul id="tab_myAction" class="mui-table-view">
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div style="width: 20%;">
+												<span>姓名</span>
+											</div>
+											<div style="width: 15%;">
+												<span>雪豹分</span><span class="fa fa-caret-down"></span>
+											</div>
+											<div style="width: 35%;">
+												<span>近期动态</span><span class="fa fa-caret-down"></span>
+											</div>
+											<div style="width: 20%;">
+												<span>资产情况</span><span class="fa fa-caret-down"></span>
+											</div>
+											<div style="width: 10%;">
+												<span>行动</span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div style="width: 20%;">
+												<span class="mui-icon mui-icon-contact" style="color: #47BAFE;"></span><span>鲁智深</span>
+											</div>
+											<div style="width: 15%;">
+												<span>95</span>
+											</div>
+											<div style="width: 35%;">
+												<span>理财意向高</span>
+											</div>
+											<div style="width: 20%;">
+												<span>AA级</span>
+											</div>
+											<div style="width: 10%;">
+												<span class="mui-icon mui-icon-plus"></span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div style="width: 20%;">
+												<span class="mui-icon mui-icon-contact" style="color: #47BAFE;"></span><span>武大郎</span>
+											</div>
+											<div style="width: 15%;">
+												<span>90</span>
+											</div>
+											<div style="width: 35%;">
+												<span>工作变动</span>
+											</div>
+											<div style="width: 20%;">
+												<span>A级</span>
+											</div>
+											<div style="width: 10%;">
+												<span class="mui-icon mui-icon-plus"></span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div style="width: 20%;">
+												<span class="mui-icon mui-icon-contact" style="color: #47BAFE;"></span><span>赵小姐</span>
+											</div>
+											<div style="width: 15%;">
+												<span>88</span>
+											</div>
+											<div style="width: 35%;">
+												<span>生子</span>
+											</div>
+											<div style="width: 20%;">
+												<span>B级</span>
+											</div>
+											<div style="width: 10%;">
+												<span class="mui-icon mui-icon-plus"></span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div style="width: 20%;">
+												<span class="mui-icon mui-icon-contact" style="color: #47BAFE;"></span><span>关云长</span>
+											</div>
+											<div style="width: 15%;">
+												<span>72</span>
+											</div>
+											<div style="width: 35%;">
+												<span>关注医疗</span>
+											</div>
+											<div style="width: 20%;">
+												<span>C级</span>
+											</div>
+											<div style="width: 10%;">
+												<span class="mui-icon mui-icon-plus"></span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div style="width: 20%;">
+												<span class="mui-icon mui-icon-contact" style="color: #47BAFE;"></span><span>张三丰</span>
+											</div>
+											<div style="width: 15%;">
+												<span>95</span>
+											</div>
+											<div style="width: 35%;">
+												<span>理财意向高</span>
+											</div>
+											<div style="width: 20%;">
+												<span>AA级</span>
+											</div>
+											<div style="width: 10%;">
+												<span class="mui-icon mui-icon-plus"></span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div style="width: 20%;">
+												<span class="mui-icon mui-icon-contact" style="color: #47BAFE;"></span><span>张三丰</span>
+											</div>
+											<div style="width: 15%;">
+												<span>95</span>
+											</div>
+											<div style="width: 35%;">
+												<span>理财意向高</span>
+											</div>
+											<div style="width: 20%;">
+												<span>AA级</span>
+											</div>
+											<div style="width: 10%;">
+												<span class="mui-icon mui-icon-plus"></span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div style="width: 20%;">
+												<span class="mui-icon mui-icon-contact" style="color: #47BAFE;"></span><span>张三丰</span>
+											</div>
+											<div style="width: 15%;">
+												<span>95</span>
+											</div>
+											<div style="width: 35%;">
+												<span>理财意向高</span>
+											</div>
+											<div style="width: 20%;">
+												<span>AA级</span>
+											</div>
+											<div style="width: 10%;">
+												<span class="mui-icon mui-icon-plus"></span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div style="width: 20%;">
+												<span class="mui-icon mui-icon-contact" style="color: #47BAFE;"></span><span>张三丰</span>
+											</div>
+											<div style="width: 15%;">
+												<span>95</span>
+											</div>
+											<div style="width: 35%;">
+												<span>理财意向高</span>
+											</div>
+											<div style="width: 20%;">
+												<span>AA级</span>
+											</div>
+											<div style="width: 10%;">
+												<span class="mui-icon mui-icon-plus"></span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div style="width: 20%;">
+												<span class="mui-icon mui-icon-contact" style="color: #47BAFE;"></span><span>张三丰</span>
+											</div>
+											<div style="width: 15%;">
+												<span>95</span>
+											</div>
+											<div style="width: 35%;">
+												<span>理财意向高</span>
+											</div>
+											<div style="width: 20%;">
+												<span>AA级</span>
+											</div>
+											<div style="width: 10%;">
+												<span class="mui-icon mui-icon-plus"></span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div style="width: 20%;">
+												<span class="mui-icon mui-icon-contact" style="color: #47BAFE;"></span><span>张三丰</span>
+											</div>
+											<div style="width: 15%;">
+												<span>95</span>
+											</div>
+											<div style="width: 35%;">
+												<span>理财意向高</span>
+											</div>
+											<div style="width: 20%;">
+												<span>AA级</span>
+											</div>
+											<div style="width: 10%;">
+												<span class="mui-icon mui-icon-plus"></span>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--右上角弹出菜单-->
+		<div id="topPopover" class="mui-popover">
+			<div class="mui-popover-arrow"></div>
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell"><a href="#">新增客户</a></li>
+						<li class="mui-table-view-cell"><a href="#">批量导入</a></li>
+						<li class="mui-table-view-cell"><a href="#">扫描名片</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="../libs/echarts/echarts-all.js"></script>
+		<script>
+			(function($, doc) {
+				$.init();
+				//阻尼系数
+				var deceleration = mui.os.ios?0.003:0.0009;
+				$('.mui-scroll-wrapper').scroll({
+					bounce: false,
+					indicators: true, //是否显示滚动条
+					deceleration:deceleration
+				});
+				$.plusReady(function() {
+					var chartOption = {
+						calculable: false,
+						series: [{
+							name: '',
+							type: 'pie',
+							radius: ['30%', '95%'],
+							center: ['50%', '50%'],
+							itemStyle : {
+								normal : {
+									label : {
+										position : 'inner',
+										formatter : function (params) {                         
+										  return params.name+":"+params.value +"\n\r(" + (params.percent - 0).toFixed(0) + '%)'
+										}
+									},
+									labelLine : {
+										show : false
+									}
+								},
+								emphasis : {
+									label : {
+										show : true,
+										formatter : "{b}\n{d}%"
+									}
+								}
+							},
+							data: [{
+								value: 30,
+								name: '高潜力',
+								selected: true
+							}, {
+								value: 25,
+								name: '中潜力'
+							}, {
+								value: 45,
+								name: '低潜力'
+							}]
+						}]
+					};
+					var pieChartDiv = doc.getElementById('pieChart');
+					var pieChart = echarts.init(pieChartDiv);
+					pieChart.setOption(chartOption);
+					
+					var gotoCustAnalysisReportButton = doc.getElementById('gotoCustAnalysisReport');
+					gotoCustAnalysisReportButton.addEventListener('tap', function(event) {
+						plus.webview.open('custAnalysisReport.html', 'new', {}, 'slide-in-right', 200);
+					}, false);
+				});
+			}(mui, document));
+		</script>
+	</body>
+
+</html>

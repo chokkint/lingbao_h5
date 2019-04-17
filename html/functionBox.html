@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.css">
+		<link rel="stylesheet" href="../css/icons-extra.css">
+		<!--App自定义的css-->
+		<!--<link rel="stylesheet" type="text/css" href="../css/app.css" />-->
+		<style>
+			.mui-slider-indicator {
+				bottom: 0;
+			}
+			.mui-slider {
+				background-color: #f2f2f2;
+			}
+			.mui-table-view-cell a span{
+				font-size: 30px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: #47BAFE;">
+			<h1 class="mui-title" style="color: white;">百宝箱</h1>
+		</header>
+		<div class="mui-content">
+			<div id="Gallery" class="mui-slider" style="margin-top:15px;">
+				<div class="mui-slider-group">
+					<div class="mui-slider-item">
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6">
+								<a id="gotoSellChance">
+									<span class="mui-icon fa fa-eye" style="color: gold;"><span class="mui-badge">5</span></span>
+									<div class="mui-media-body">销售时机</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6">
+								<a id="gotoNewsShared">
+									<span class="mui-icon-extra mui-icon-extra-share" style="color: #47BAFE;"></span>
+									<div class="mui-media-body">资讯分享</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6">
+								<a id="gotoProductionRecommend">
+									<span class="mui-icon mui-icon-chatbubble" style="color: limegreen;"></span>
+									<div class="mui-media-body"> 产品推荐</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6">
+								<a id="gotoGreetingCardSelect">
+									<span class="mui-icon-extra mui-icon-extra-heart-filled" style="color: orangered;"></span>
+									<div class="mui-media-body">贺卡祝福</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script>
+		(function($, doc) {
+			$.init();
+			$.plusReady(function() {
+				var slider = document.getElementById('Gallery');
+				var group = slider.querySelector('.mui-slider-group');
+				var items = mui('.mui-slider-item', group);
+				//克隆第一个节点
+				var first = items[0].cloneNode(true);
+				first.classList.add('mui-slider-item-duplicate');
+				//克隆最后一个节点
+				var last = items[items.length - 1].cloneNode(true);
+				last.classList.add('mui-slider-item-duplicate');
+				//处理是否循环逻辑，若支持循环，需支持两点：
+				//1、在.mui-slider-group节点上增加.mui-slider-loop类
+				//2、重复增加2个循环节点，图片顺序变为：N、1、2...N、1
+				var sliderApi = mui(slider).slider();
+				
+				var gotoSellChanceButton = doc.getElementById('gotoSellChance');
+				gotoSellChanceButton.addEventListener('tap', function(event) {
+					plus.webview.open('sellChance.html', 'new', {}, 'slide-in-right', 200);
+				}, false);
+				
+				var gotoNewsSharedButton = doc.getElementById('gotoNewsShared');
+				gotoNewsSharedButton.addEventListener('tap', function(event) {
+					plus.webview.open('newsShared.html', 'new', {}, 'slide-in-right', 200);
+				}, false);
+				
+				var gotoProductionRecommendButton = doc.getElementById('gotoProductionRecommend');
+				gotoProductionRecommendButton.addEventListener('tap', function(event) {
+					plus.webview.open('productionRecommend.html', 'new', {}, 'slide-in-right', 200);
+				}, false);
+				
+				var gotoGreetingCardSelectButton = doc.getElementById('gotoGreetingCardSelect');
+				gotoGreetingCardSelectButton.addEventListener('tap', function(event) {
+					plus.webview.open('greetingCardSelect.html', 'new', {}, 'slide-in-right', 200);
+				}, false);
+			});
+		}(mui, document));
+	</script>
+
+</html>

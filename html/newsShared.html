@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<!--App自定义的css-->
+		<!--<link rel="stylesheet" type="text/css" href="../css/app.css"/>-->
+		<style>
+			html,
+			body {
+				background-color: white;
+			}
+			.title {
+				width: 100%;
+				height: 30px;
+				background-color: darkgray;
+				border-top-left-radius: 15px;
+				border-top-right-radius: 15px;
+				padding-left: 10px;
+				padding-top: 5px;
+				margin-bottom: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: #47BAFE;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: white;">
+				<span style="font-size: 15px;">返回</span>
+			</a>
+			<h1 class="mui-title" style="color: white;">资讯</h1>
+			<a class="mui-icon mui-icon-right-nav mui-pull-right" style="color: white;" href="newsHistory.html">
+				<span style="font-size: 15px;">动态追踪</span>
+			</a>
+		</header>
+		<div class="mui-content" style="background-color: white;">
+			<div class="mui-slider">
+				<div class="mui-slider-group mui-slider-loop">
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="../images/yuantiao.jpg">
+						</a>
+					</div>
+					<!-- 第一张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/shuijiao.jpg">
+						</a>
+					</div>
+					<!-- 第二张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/muwu.jpg">
+						</a>
+					</div>
+					<!-- 第三张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/cbd.jpg">
+						</a>
+					</div>
+					<!-- 第四张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/yuantiao.jpg">
+						</a>
+					</div>
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="../images/shuijiao.jpg">
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+
+			<div style="padding: 20px 10px;">
+				<div class="title">
+					<a style="width: 100%; color: white;">
+						<span>最新资讯</span>
+					</a>
+				</div>
+				<div>
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell mui-media">
+							<a href="newsDetail.html">
+								<img class="mui-media-object mui-pull-right" src="../images/yuantiao.jpg">
+								<div class="mui-media-body">
+									<span>标题标题标题1</span>
+									<p class="mui-ellipsis" style="color: black;">正文</p>
+									<p class="mui-ellipsis" style="color: black;">正文 2行</p>
+									<p class="mui-ellipsis">1小时前 来源:XXXXXX</p>
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+							<a href="newsDetail.html">
+								<img class="mui-media-object mui-pull-right" src="../images/cbd.jpg">
+								<div class="mui-media-body">
+									<span>标题标题标题1</span>
+									<p class="mui-ellipsis" style="color: black;">正文</p>
+									<p class="mui-ellipsis" style="color: black;">正文 2行</p>
+									<p class="mui-ellipsis">1小时前 来源:XXXXXX</p>
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+							<a href="newsDetail.html">
+								<img class="mui-media-object mui-pull-right" src="../images/muwu.jpg">
+								<div class="mui-media-body">
+									<span>标题标题标题1</span>
+									<p class="mui-ellipsis" style="color: black;">正文</p>
+									<p class="mui-ellipsis" style="color: black;">正文 2行</p>
+									<p class="mui-ellipsis">1小时前 来源:XXXXXX</p>
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+							<a href="newsDetail.html">
+								<img class="mui-media-object mui-pull-right" src="../images/shuijiao.jpg">
+								<div class="mui-media-body">
+									<span>标题标题标题1</span>
+									<p class="mui-ellipsis" style="color: black;">正文</p>
+									<p class="mui-ellipsis" style="color: black;">正文 2行</p>
+									<p class="mui-ellipsis">1小时前 来源:XXXXXX</p>
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+							<a href="newsDetail.html">
+								<img class="mui-media-object mui-pull-right" src="../images/muwu.jpg">
+								<div class="mui-media-body">
+									<span>标题标题标题1</span>
+									<p class="mui-ellipsis" style="color: black;">正文</p>
+									<p class="mui-ellipsis" style="color: black;">正文 2行</p>
+									<p class="mui-ellipsis">1小时前 来源:XXXXXX</p>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			(function($, doc) {
+				$.init();
+				$.ready(function() {});
+			})(mui, document);
+		</script>
+	</body>
+
+</html>

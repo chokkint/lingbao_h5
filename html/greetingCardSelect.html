@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link href="../css/mui.picker.css" rel="stylesheet" />
+		<link href="../css/mui.poppicker.css" rel="stylesheet" />
+		<!--App自定义的css-->
+		<!--<link rel="stylesheet" type="text/css" href="../css/app.css"/>-->
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: #47BAFE;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: white;">
+				<span style="font-size: 15px;">返回</span>
+			</a>
+			<h1 class="mui-title" style="color: white;">贺卡祝福</h1>
+			<a class="mui-icon mui-icon-right-nav mui-pull-right" style="color: white;" href="greetingCardShare.html">
+				<span style="font-size: 15px;">下一步</span>
+			</a>
+		</header>
+		<div class="mui-content">
+			<div style="height: 60px; padding: 20px 10px;">
+				<h5>左右滑动选择贺卡模板</h5>
+			</div>
+			<div class="mui-slider" >
+				<div class="mui-slider-group mui-slider-loop">
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="../images/yuantiao.jpg">
+						</a>
+					</div>
+					<!-- 第一张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/shuijiao.jpg">
+						</a>
+					</div>
+					<!-- 第二张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/muwu.jpg">
+						</a>
+					</div>
+					<!-- 第三张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/cbd.jpg">
+						</a>
+					</div>
+					<!-- 第四张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/yuantiao.jpg">
+						</a>
+					</div>
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="../images/shuijiao.jpg">
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+			
+			<div style="height: 60px; padding: 20px 10px;">
+				<button id='showGreetingPicker' class="mui-btn mui-btn-block" style="background-color: #47BAFE; color: white;">点击选择祝福语句</button>
+				<div id='selectedGreetingPicker' class="ui-alert" style="padding: 20px 10px; color: #47BAFE;"></div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.picker.js"></script>
+		<script src="../js/mui.poppicker.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+					//普通示例
+					var showUserPicker = new $.PopPicker();
+					showUserPicker.setData([{
+						value: 'srkl',
+						text: '生日快乐'
+					}, {
+						value: 'ydkl',
+						text: '元旦快乐'
+					}, {
+						value: 'cjkl',
+						text: '春节快乐'
+					}, {
+						value: 'yxjkl',
+						text: '元宵节快乐'
+					}, {
+						value: 'ldjkl',
+						text: '劳动节快乐'
+					}, {
+						value: 'zqjkl',
+						text: '中秋节快乐'
+					}, {
+						value: 'sdjkl',
+						text: '圣诞节快乐'
+					}]);
+					var showUserPickerButton = doc.getElementById('showGreetingPicker');
+					var selectedGreetingPicker = doc.getElementById('selectedGreetingPicker');
+					showUserPickerButton.addEventListener('tap', function(event) {
+						showUserPicker.show(function(items) {
+							selectedGreetingPicker.innerText = "您选择的祝福语是：" + items[0].text;
+							// userResult.innerText = JSON.stringify(items[0]);
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+				});
+			})(mui, document);
+		</script>
+	</body>
+
+</html>

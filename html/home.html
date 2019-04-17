@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../css/icons-extra.css">
+		<link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.css">
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			.mui-bar~.mui-content .mui-fullscreen {
+				top: 44px;
+				height: auto;
+			}
+			.mui-pull-top-tips {
+				position: absolute;
+				top: -20px;
+				left: 50%;
+				margin-left: -25px;
+				width: 40px;
+				height: 40px;
+				border-radius: 100%;
+				z-index: 1;
+			}
+			.mui-bar~.mui-pull-top-tips {
+				top: 24px;
+			}
+			.mui-pull-top-wrapper {
+				width: 42px;
+				height: 42px;
+				display: block;
+				text-align: center;
+				background-color: #efeff4;
+				border: 1px solid #ddd;
+				border-radius: 25px;
+				background-clip: padding-box;
+				box-shadow: 0 4px 10px #bbb;
+				overflow: hidden;
+			}
+			.mui-pull-top-tips.mui-transitioning {
+				-webkit-transition-duration: 200ms;
+				transition-duration: 200ms;
+			}
+			.mui-pull-top-tips .mui-pull-loading {
+				/*-webkit-backface-visibility: hidden;
+				-webkit-transition-duration: 400ms;
+				transition-duration: 400ms;*/
+				
+				margin: 0;
+			}
+			.mui-pull-top-wrapper .mui-icon,
+			.mui-pull-top-wrapper .mui-spinner {
+				margin-top: 7px;
+			}
+			.mui-pull-top-wrapper .mui-icon.mui-reverse {
+				/*-webkit-transform: rotate(180deg) translateZ(0);*/
+			}
+			
+			.hboy-count {
+				margin: 10px auto;
+			}
+			.hboy-count div{
+				float: left;
+				text-align: center;
+			}
+			.hboy-count div label{
+				font-size: 40px;
+			}
+			
+			.mui-pull-bottom-tips {
+				text-align: center;
+				background-color: #efeff4;
+				font-size: 15px;
+				line-height: 40px;
+				color: #777;
+			}
+			.mui-pull-top-canvas {
+				overflow: hidden;
+				background-color: #fafafa;
+				border-radius: 40px;
+				box-shadow: 0 4px 10px #bbb;
+				width: 40px;
+				height: 40px;
+				margin: 0 auto;
+			}
+			.mui-pull-top-canvas canvas {
+				width: 30px;
+			}
+			.mui-slider-indicator.mui-segmented-control {
+				background-color: #efeff4;
+				border: 1px solid #007aff;
+			}
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+				color: #fff;
+				background-color: #007aff;
+			}
+			.mui-scroll ul li {
+				padding: 2px 15px;
+			}
+			.mui-scroll ul li div {
+				float: left;
+			}
+			 
+			.mui-scroll ul li div span {
+				display: block;
+				transform: translateY(50%);
+			}
+			.mui-scroll ul li div p {
+				font-size: 12px;
+				padding-top: 8px;
+			}
+			.mui-scroll ul li div button {
+				border: 1px solid #f7f7f7;
+				background-color: #47BAFE;
+				color: white;
+				font-size: 13px;
+				padding: 8px;
+				margin-bottom: 2px;
+			}
+			#actionAddBtn{
+				right: 0px;
+				left: 0px;
+				height: 13%;
+				font-size: 300%;
+				bottom: 8px;
+				position: absolute;
+				text-align: center;
+			}
+			#actionAddBtn span {
+				display: block;
+				transform: translateY(50%);
+			}
+			.mui-col-sm-1 {
+				width: 8%;
+			}
+			.mui-col-sm-2 {
+				width: 16%;
+			}
+			.mui-col-sm-3 {
+				width: 25%;
+			}
+			.mui-col-sm-9 {
+				width: 76%;
+			}
+			.mui-col-sm-12 {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: #47BAFE;">
+			<h1 class="mui-title" style="color: white;">首页</h1>
+			<a id="gotoTimeChart" class="mui-icon mui-icon-email mui-pull-right" style="font-size: 35px;color: white;"><span class="mui-badge" style="margin-left: -22px;margin-top: 10px;">9</span></a>
+		</header>
+		<div class="mui-content">
+			<div class="mui-col-xs-12 mui-col-sm-12" style="height: 80px; padding: 5px 10px;">
+				<div class="mui-col-xs-12 mui-col-sm-12" style="height: 50%;">
+					<h2>王小小</h2>
+				</div>
+				
+				<div class="mui-col-xs-12 mui-col-sm-12" style="height: 50%;">
+					<div class="mui-col-xs-6 mui-col-sm-6" style="float: left;">
+						<span>早上好，励志语句XXX</span>
+					</div>
+					<div class="mui-col-xs-6 mui-col-sm-6" style="float: left; text-align: right; color: #47BAFE;">
+						<span>打败99%的小伙伴</span>
+					</div>
+				</div>
+			</div>
+			<div class="mui-slider mui-fullscreen" style="margin-top: 80px; height: 20%;">
+				<div class="mui-segmented-control mui-slider-indicator mui-segmented-control-inverted" style="width: 100%; border-radius: 20px;">
+					<a class="mui-active mui-control-item" style="width: 33%;" href="#currentDayCount">
+						<span>本日</span>
+					</a>
+					<a class="mui-control-item" style="width: 33%;" href="#currentWeekCount">
+						<span>本周</span>
+					</a>
+					<a class="mui-control-item" style="width: 33%;" href="#currentMonthCount">
+						<span>本月</span>
+					</a>
+				</div>
+				<div class="mui-slider-group">
+					<div id="currentDayCount" class="mui-slider-item mui-control-content mui-active">
+						<div class="mui-scroll-wrapper">
+							<div class="hboy-count mui-scroll mui-col-xs-12 mui-col-sm-12">
+								<div class="mui-col-xs-6 mui-col-sm-6">
+									<p>拜访客户</p>
+									<label>99</label><span class="mui-badge">人</span>
+								</div>
+								<div class="mui-col-xs-6 mui-col-sm-6">
+									<p>行动记录</p>
+									<label>200</label><span class="mui-badge">条</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="currentWeekCount" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="hboy-count mui-scroll mui-col-xs-12 mui-col-sm-12">
+								<div class="mui-col-xs-6 mui-col-sm-6">
+									<p>拜访客户</p>
+									<label>300</label><span class="mui-badge">人</span>
+								</div>
+								<div class="mui-col-xs-6 mui-col-sm-6">
+									<p>行动记录</p>
+									<label>500</label><span class="mui-badge">条</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="currentMonthCount" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="hboy-count mui-scroll mui-col-xs-12 mui-col-sm-12">
+								<div class="mui-col-xs-6 mui-col-sm-6">
+									<p>拜访客户</p>
+									<label>700</label><span class="mui-badge">人</span>
+								</div>
+								<div class="mui-col-xs-6 mui-col-sm-6">
+									<p>行动记录</p>
+									<label>1000</label><span class="mui-badge">条</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="mui-slider mui-fullscreen" style="margin-top: 55%; height: 42%;">
+				<div class="mui-segmented-control mui-slider-indicator mui-segmented-control-inverted" style="width: 100%;">
+					<a class="mui-control-item mui-active" style="width: 50%;" href="#item1mobile">
+						<span>我的计划</span>
+						<span class="mui-badge" style="color: white; background-color: dimgray;">10</span>
+					</a>
+					<a class="mui-control-item" style="width: 50%;" href="#item2mobile">
+						<span>推荐行动</span>
+						<span class="mui-badge" style="color: white; background-color: dimgray;">20</span>
+					</a>
+				</div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul id="tab_myPlan" class="mui-table-view">
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-right mui-disabled">
+											<a class="mui-btn mui-btn-red">删除</a>
+										</div>
+										<div id="gotoCustAllDetailInfo" class="mui-slider-handle mui-col-sm-12">
+											<div class="mui-col-sm-1">
+												<a href="javascript:;">
+													<span class="fa fa-phone"></span>
+												</a>
+											</div>
+											<div class="mui-col-sm-9">
+												<span>祝贺李四光升职</span>
+												<p>时间 10:00-11:00</p>
+											</div>
+											<div class="mui-col-sm-2" style="text-align: center;">
+												<span class="fa fa-check-square-o" style="font-size: 18px;"></span>
+												<span class="mui-tab-label" style="font-size: 10px;">已完成</span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-right mui-disabled">
+											<a class="mui-btn mui-btn-red">删除</a>
+										</div>
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div class="mui-col-sm-1">
+												<a href="javascript:;">
+													<span class="fa fa-car"></span>
+												</a>
+											</div>
+											<div class="mui-col-sm-9">
+												<span>拜访李四光</span>
+												<p>时间 12:00-14:00</p>
+											</div>
+											<div class="mui-col-sm-2" style="text-align: center;">
+												<span class="fa fa-microphone" style="font-size: 18px;"></span>
+												<span class="mui-tab-label" style="font-size: 10px;">语音日志</span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-right mui-disabled">
+											<a class="mui-btn mui-btn-red">删除</a>
+										</div>
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div class="mui-col-sm-1">
+												<a href="javascript:;">
+													<span class="fa fa-car"></span>
+												</a>
+											</div>
+											<div class="mui-col-sm-9">
+												<span>拜访李四光</span>
+												<p>时间 12:00-14:00</p>
+											</div>
+											<div class="mui-col-sm-2" style="text-align: center;">
+												<span class="fa fa-microphone" style="font-size: 18px;"></span>
+												<span class="mui-tab-label" style="font-size: 10px;">语音日志</span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-right mui-disabled">
+											<a class="mui-btn mui-btn-red">删除</a>
+										</div>
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div class="mui-col-sm-1">
+												<a href="javascript:;">
+													<span class="fa fa-car"></span>
+												</a>
+											</div>
+											<div class="mui-col-sm-9">
+												<span>拜访李四光</span>
+												<p>时间 12:00-14:00</p>
+											</div>
+											<div class="mui-col-sm-2" style="text-align: center;">
+												<span class="fa fa-microphone" style="font-size: 18px;"></span>
+												<span class="mui-tab-label" style="font-size: 10px;">语音日志</span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-right mui-disabled">
+											<a class="mui-btn mui-btn-red">删除</a>
+										</div>
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div class="mui-col-sm-1">
+												<a href="javascript:;">
+													<span class="fa fa-car"></span>
+												</a>
+											</div>
+											<div class="mui-col-sm-9">
+												<span>拜访李四光</span>
+												<p>时间 12:00-14:00</p>
+											</div>
+											<div class="mui-col-sm-2" style="text-align: center;">
+												<span class="fa fa-microphone" style="font-size: 18px;"></span>
+												<span class="mui-tab-label" style="font-size: 10px;">语音日志</span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-right mui-disabled">
+											<a class="mui-btn mui-btn-red">删除</a>
+										</div>
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div class="mui-col-sm-1">
+												<a href="javascript:;">
+													<span class="fa fa-car"></span>
+												</a>
+											</div>
+											<div class="mui-col-sm-9">
+												<span>拜访李四光</span>
+												<p>时间 12:00-14:00</p>
+											</div>
+											<div class="mui-col-sm-2" style="text-align: center;">
+												<span class="fa fa-microphone" style="font-size: 18px;"></span>
+												<span class="mui-tab-label" style="font-size: 10px;">语音日志</span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-right mui-disabled">
+											<a class="mui-btn mui-btn-red">删除</a>
+										</div>
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div class="mui-col-sm-1">
+												<a href="javascript:;">
+													<span class="fa fa-car"></span>
+												</a>
+											</div>
+											<div class="mui-col-sm-9">
+												<span>拜访李四光</span>
+												<p>时间 12:00-14:00</p>
+											</div>
+											<div class="mui-col-sm-2" style="text-align: center;">
+												<span class="fa fa-microphone" style="font-size: 18px;"></span>
+												<span class="mui-tab-label" style="font-size: 10px;">语音日志</span>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-right mui-disabled">
+											<a class="mui-btn mui-btn-red">删除</a>
+										</div>
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div class="mui-col-sm-1">
+												<a href="javascript:;">
+													<span class="fa fa-car"></span>
+												</a>
+											</div>
+											<div class="mui-col-sm-9">
+												<span>拜访李四光</span>
+												<p>时间 12:00-14:00</p>
+											</div>
+											<div class="mui-col-sm-2" style="text-align: center;">
+												<span class="fa fa-microphone" style="font-size: 18px;"></span>
+												<span class="mui-tab-label" style="font-size: 10px;">语音日志</span>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul id="tab_myAction" class="mui-table-view">
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-right mui-disabled">
+											<a class="mui-btn mui-btn-red">删除</a>
+										</div>
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div class="mui-col-sm-1">
+												<a href="javascript:;">
+													<span class="mui-icon-extra mui-icon-extra-lamp"></span>
+												</a>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>李四光</span>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>升职</span>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>祝贺一下</span>
+											</div>
+											<div class="mui-col-sm-2" style="text-align: center;">
+												<button class="mui-btn mui-btn-block mui-btn-primary">添加行动</button>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-right mui-disabled">
+											<a class="mui-btn mui-btn-red">删除</a>
+										</div>
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div class="mui-col-sm-1">
+												<a href="javascript:;">
+													<span class="mui-icon-extra mui-icon-extra-lamp"></span>
+												</a>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>李四光</span>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>升职</span>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>祝贺一下</span>
+											</div>
+											<div class="mui-col-sm-2" style="text-align: center;">
+												<button class="mui-btn mui-btn-block mui-btn-primary">添加行动</button>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-right mui-disabled">
+											<a class="mui-btn mui-btn-red">删除</a>
+										</div>
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div class="mui-col-sm-1">
+												<a href="javascript:;">
+													<span class="mui-icon-extra mui-icon-extra-lamp"></span>
+												</a>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>赵大勇</span>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>理财意向高</span>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>拜访</span>
+											</div>
+											<div class="mui-col-sm-2" style="text-align: center;">
+												<button class="mui-btn mui-btn-block mui-btn-primary">添加行动</button>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-right mui-disabled">
+											<a class="mui-btn mui-btn-red">删除</a>
+										</div>
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div class="mui-col-sm-1">
+												<a href="javascript:;">
+													<span class="mui-icon-extra mui-icon-extra-lamp"></span>
+												</a>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>王义夫</span>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>住院频率高</span>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>联系一下</span>
+											</div>
+											<div class="mui-col-sm-2" style="text-align: center;">
+												<button class="mui-btn mui-btn-block mui-btn-primary">添加行动</button>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-right mui-disabled">
+											<a class="mui-btn mui-btn-red">删除</a>
+										</div>
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div class="mui-col-sm-1">
+												<a href="javascript:;">
+													<span class="mui-icon-extra mui-icon-extra-lamp"></span>
+												</a>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>黄先生</span>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>六个月未联系</span>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>联系一下</span>
+											</div>
+											<div class="mui-col-sm-2" style="text-align: center;">
+												<button class="mui-btn mui-btn-block mui-btn-primary">添加行动</button>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-right mui-disabled">
+											<a class="mui-btn mui-btn-red">删除</a>
+										</div>
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div class="mui-col-sm-1">
+												<a href="javascript:;">
+													<span class="mui-icon-extra mui-icon-extra-lamp"></span>
+												</a>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>黄先生</span>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>六个月未联系</span>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>联系一下</span>
+											</div>
+											<div class="mui-col-sm-2" style="text-align: center;">
+												<button class="mui-btn mui-btn-block mui-btn-primary">添加行动</button>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-right mui-disabled">
+											<a class="mui-btn mui-btn-red">删除</a>
+										</div>
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div class="mui-col-sm-1">
+												<a href="javascript:;">
+													<span class="mui-icon-extra mui-icon-extra-lamp"></span>
+												</a>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>黄先生</span>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>六个月未联系</span>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>联系一下</span>
+											</div>
+											<div class="mui-col-sm-2" style="text-align: center;">
+												<button class="mui-btn mui-btn-block mui-btn-primary">添加行动</button>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-right mui-disabled">
+											<a class="mui-btn mui-btn-red">删除</a>
+										</div>
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div class="mui-col-sm-1">
+												<a href="javascript:;">
+													<span class="mui-icon-extra mui-icon-extra-lamp"></span>
+												</a>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>黄先生</span>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>六个月未联系</span>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>联系一下</span>
+											</div>
+											<div class="mui-col-sm-2" style="text-align: center;">
+												<button class="mui-btn mui-btn-block mui-btn-primary">添加行动</button>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-right mui-disabled">
+											<a class="mui-btn mui-btn-red">删除</a>
+										</div>
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div class="mui-col-sm-1">
+												<a href="javascript:;">
+													<span class="mui-icon-extra mui-icon-extra-lamp"></span>
+												</a>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>黄先生</span>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>六个月未联系</span>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>联系一下</span>
+											</div>
+											<div class="mui-col-sm-2" style="text-align: center;">
+												<button class="mui-btn mui-btn-block mui-btn-primary">添加行动</button>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-right mui-disabled">
+											<a class="mui-btn mui-btn-red">删除</a>
+										</div>
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div class="mui-col-sm-1">
+												<a href="javascript:;">
+													<span class="mui-icon-extra mui-icon-extra-lamp"></span>
+												</a>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>黄先生</span>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>六个月未联系</span>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>联系一下</span>
+											</div>
+											<div class="mui-col-sm-2" style="text-align: center;">
+												<button class="mui-btn mui-btn-block mui-btn-primary">添加行动</button>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-right mui-disabled">
+											<a class="mui-btn mui-btn-red">删除</a>
+										</div>
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div class="mui-col-sm-1">
+												<a href="javascript:;">
+													<span class="mui-icon-extra mui-icon-extra-lamp"></span>
+												</a>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>黄先生</span>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>六个月未联系</span>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>联系一下</span>
+											</div>
+											<div class="mui-col-sm-2" style="text-align: center;">
+												<button class="mui-btn mui-btn-block mui-btn-primary">添加行动</button>
+											</div>
+										</div>
+									</li>
+									<li class="mui-table-view-cell">
+										<div class="mui-slider-right mui-disabled">
+											<a class="mui-btn mui-btn-red">删除</a>
+										</div>
+										<div class="mui-slider-handle mui-col-sm-12">
+											<div class="mui-col-sm-1">
+												<a href="javascript:;">
+													<span class="mui-icon-extra mui-icon-extra-lamp"></span>
+												</a>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>黄先生</span>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>六个月未联系</span>
+											</div>
+											<div class="mui-col-sm-3">
+												<span>联系一下</span>
+											</div>
+											<div class="mui-col-sm-2" style="text-align: center;">
+												<button class="mui-btn mui-btn-block mui-btn-primary">添加行动</button>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+			<div id="actionAddBtn" class="mui-col-sm-12">
+				<span class="fa fa-plus-circle" style="color: #47BAFE;"></span>
+				<span class="mui-tab-label" style="font-size: 18px;padding-top: 10px;">行动记录</span>
+			</div>
+		</div>
+		<script src="../js/mui.js"></script>
+		<script>
+			(function($, doc) {
+				$.init();
+				//阻尼系数
+				var deceleration = mui.os.ios?0.003:0.0009;
+				$('.mui-scroll-wrapper').scroll({
+					bounce: false,
+					indicators: true, //是否显示滚动条
+					deceleration:deceleration
+				});
+				$.plusReady(function() {
+					$('#tab_myPlan').on('tap', '.mui-btn-red', function(event) {
+						var elem = this;
+						var li = elem.parentNode.parentNode;
+						mui.confirm('确认删除该条记录？', '确认', btnArray, function(e) {
+							if (e.index == 0) {
+								li.parentNode.removeChild(li);
+							} else {
+								setTimeout(function() {
+									$.swipeoutClose(li);
+								}, 0);
+							}
+						});
+					});
+					$('#tab_myAction').on('tap', '.mui-btn-red', function(event) {
+						var elem = this;
+						var li = elem.parentNode.parentNode;
+						mui.confirm('确认删除该条记录？', '确认', btnArray, function(e) {
+							if (e.index == 0) {
+								li.parentNode.removeChild(li);
+							} else {
+								setTimeout(function() {
+									$.swipeoutClose(li);
+								}, 0);
+							}
+						});
+					});
+					var btnArray = ['确认', '取消'];
+					
+					var gotoTimeChartButton = document.getElementById('gotoTimeChart');
+					gotoTimeChartButton.addEventListener('tap', function(event) {
+						plus.webview.open('allPlanTimeChart.html', 'new', {}, 'slide-in-right', 200);
+					}, false);
+					
+					var gotoCustAllDetailInfoButton = document.getElementById('gotoCustAllDetailInfo');
+					gotoCustAllDetailInfoButton.addEventListener('tap', function(event) {
+						plus.webview.open('custAllDetailInfo.html', 'new', {}, 'slide-in-right', 200);
+					}, false);
+				});
+			}(mui, document));
+		</script>
+	</body>
+
+</html>
