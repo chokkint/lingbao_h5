@@ -1,15 +1,45 @@
 /*
- *这是单独为hello mui准备的个性化css，可以覆盖标准mui的css定义；
- * 在实际项目开发时，建议为App单独写一个css文件，从而实现项目的自定义皮肤功能；
- * 
+ * 系统共通样式定义
  * */
 
-/*hm开头的表示仅为 Hello MUI示例定义*/
-.hm-description{
-	margin: .5em 0;
+/*系统级别主色调定义*/
+.common-bg-color-blue {
+	background-color: #47BAFE;
+}
+.common-bg-color-white {
+	background-color: white;
+}
+.common-font-color-blue {
+	color: #47BAFE;
+}
+.common-font-color-white {
+	color: white;
 }
 
-.hm-description>li {
-	font-size: 14px;
-	color: #8f8f94;
+.common-btn-login {
+	color: white;
+	border: 1px white solid;
+	border-radius: 25px;
 }
+.common-btn-yzm {
+	background-color: #47BAFE;
+	color: white;
+	border-radius: 25px;
+	width: 30%;
+}
+
+/* 页面Header部分共通样式 */
+header {
+	background-color: #47BAFE !important;
+}
+header h1 {
+	color: white !important;
+}
+header a {
+	color: white !important;
+}
+header a span {
+	font-size: 15px;
+	font-weight: bolder;
+}
+

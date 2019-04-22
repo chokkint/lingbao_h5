@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<!-- 引用共通CSS文件 -->
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<style type="text/css">
+			/* 每个画面自定义的CSS样式 */
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"><span>返回</span></a>
+			<h1 class="mui-title">标题</h1>
+			<a class="mui-action-back mui-icon mui-icon-extra-gold mui-pull-right"><span>设置</span></a>
+		</header>
+		<div class="mui-content" style="padding-top: 31px;">
+			<!-- 每个画面实际内容 -->
+		</div>
+	</body>
+	<script src="../js/mui.js"></script>
+	<script>
+		(function($, doc) {
+			$.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			$.plusReady(function() {
+				
+				/* 接收调用画面传递的参数
+				var self = plus.webview.currentWebview();
+				var name = self.name;//获得参数
+				*/
+	
+				/*  绑定事件样例
+				var telCustImpBtn = doc.getElementById('telCustImpBtn');
+				telCustImpBtn.addEventListener('tap', function(event) {
+					mui.confirm('发现99名联系人可关联客户','关联客户',['去关联', '暂不处理'],function (e) {
+						if(e.index == 0){  //e.index确定当前用户点击的是哪个按钮
+							//打开新页面
+							$.openWindow({
+								url: 'matchTelAndWxCust.html',
+								id: 'matchTelAndWxCust',
+								show: {
+									aniShow: 'pop-in'
+								},
+								extras: {    //extras里面的就是画面传递的参数了
+									name: "zqm"
+								}
+							});
+						}else{
+							$.openWindow({
+								url: 'indexMenu.html',
+								id: 'indexMenu',
+								show: {
+									aniShow: 'pop-in'
+								},
+								extras: {    //extras里面的就是画面传递的参数了
+									name: "zqm"
+								}
+							});
+						}
+					});
+				});
+				*/
+			});
+		}(mui, document));
+	</script>
+</html>
