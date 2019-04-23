@@ -28,17 +28,21 @@
 	width: 30%;
 }
 
+html, body {
+	background-color: #EFEFF4;
+}
+			
 /* 页面Header部分共通样式 */
-header {
-	background-color: #47BAFE !important;
+.mui-bar-nav {
+	background-color: #47BAFE;
 }
-header h1 {
-	color: white !important;
+.mui-bar-nav h1 {
+	color: white;
 }
-header a {
-	color: white !important;
+.mui-bar-nav a {
+	color: white;
 }
-header a span {
+.mui-bar-nav a span {
 	font-size: 15px;
 	font-weight: bolder;
 }
