@@ -1,0 +1,20 @@
+/**
+ * 系统用共通常量定义
+ **/
+(function(owner) {
+	
+	/**
+	 * 常量定义
+	 */
+	owner.DATASET_KEY = "DATASET";
+	owner.ERROR_CODE_KEY = "ERROR_CODE";
+	owner.ERROR_MESSAGE_KEY = "ERROR_MESSAGE";
+	owner.ERROR_CODE_OBJECT  =  {
+		"ERROR_CODE_ERROR" : "ERROR",
+		"ERROR_CODE_EXISTED" : "EXISTED",
+		"ERROR_CODE_SUCCESS" : "SUCCESS",
+		"ERROR_CODE_NO_ACCESS" : "NO_ACCESS",
+		"ERROR_CODE_SESSION_TIMEOUT" : "SESSION_TIMEOUT",
+		"ERROR_CODE_UNKNOWN_EXCEPTIONS" : "UNKNOWN_EXCEPTIONS"
+	};
+}(window.SysConstants = {}));

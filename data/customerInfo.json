@@ -1,0 +1,46 @@
+{
+	"ERROR_CODE" : "SUCCESS",
+	"ERROR_MESSAGE" : "查询数据列表成功!",
+	"DATASET" : [
+		{
+			"name" : "Zhang",
+			"sex" : "男",
+			"age" : "36",
+			"tel" : "136****6666",
+			"cnName" : "张三丰",
+			"level" : "1"
+		},
+		{
+			"name" : "Ling",
+			"sex" : "男",
+			"age" : "28",
+			"tel" : "128****8888",
+			"cnName" : "令狐冲",
+			"level" : "2"
+		},
+		{
+			"name" : "Tang",
+			"sex" : "男",
+			"age" : "40",
+			"tel" : "140****0000",
+			"cnName" : "唐伯虎",
+			"level" : "3"
+		},
+		{
+			"name" : "Qiu",
+			"sex" : "女",
+			"age" : "35",
+			"tel" : "135****5555",
+			"cnName" : "秋香",
+			"level" : "4"
+		},
+		{
+			"name" : "White",
+			"sex" : "NG",
+			"age" : "6",
+			"tel" : "106****6666",
+			"cnName" : "大白",
+			"level" : "0"
+		}
+	]
+}
