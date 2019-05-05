@@ -19,6 +19,16 @@ document.writeln("<script type='text/javascript' src='" + getContextPath() + "/j
 //系统常量定义类
 document.writeln("<script type='text/javascript' src='" + getContextPath() + "/js/constants.js'></script>");
 
+//MUI弹出选择框插件
+document.writeln("<script type='text/javascript' src='" + getContextPath() + "/libs/mui/poppicker/mui.picker.js'></script>");
+document.writeln("<script type='text/javascript' src='" + getContextPath() + "/libs/mui/poppicker/mui.poppicker.js'></script>");
+
+//ARTTMPL插件
+document.writeln("<script type='text/javascript' src='" + getContextPath() + "/libs/arttmpl/arttmpl.js'></script>");
+
+//共通处理函数定义
+document.writeln("<script type='text/javascript' src='" + getContextPath() + "/js/sysUtils.js'></script>");
+
 //系统工具类
 document.writeln("<script type='text/javascript' src='" + getContextPath() + "/js/utils.js'></script>");
 
