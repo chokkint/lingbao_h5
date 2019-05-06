@@ -19,6 +19,9 @@ document.writeln("<script type='text/javascript' src='" + getContextPath() + "/j
 //系统常量定义类
 document.writeln("<script type='text/javascript' src='" + getContextPath() + "/js/constants.js'></script>");
 
+//JQuery
+document.writeln("<script type='text/javascript' src='" + getContextPath() + "/libs/jquery/3.4.1/jquery-3.4.1.min.js'></script>");
+
 //MUI弹出选择框插件
 document.writeln("<script type='text/javascript' src='" + getContextPath() + "/libs/mui/poppicker/mui.picker.js'></script>");
 document.writeln("<script type='text/javascript' src='" + getContextPath() + "/libs/mui/poppicker/mui.poppicker.js'></script>");
