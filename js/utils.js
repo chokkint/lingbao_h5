@@ -9,10 +9,35 @@
 	 */
 	owner.getContextPath = function() {
 		var url = document.location.toString();
-		if (url.indexOf("/") != -1) {
-			url = url.substring(0, url.lastIndexOf("/"));
+		
+		//Android手机获取项目根目录
+		if (url.indexOf("www") != -1) {
+			url = url.substring(0, url.lastIndexOf("www") + 3);
+		}else{
+			//浏览器获取项目根目录
+			var a = document.location.pathname.substring(1);
+			var b = a.indexOf("/");
+			var c =a.substring(0,b);
+			url = document.location.origin + "/" + c;
 		}
 		return url;
+	}
+	/**
+	 * @description 打开新窗口,并传递参数
+	 * @param {Object} url 新窗口URL
+	 * @param {Object} params 传递的参数
+	 */
+	owner.openWebView = function(url, params){
+		var option = {};
+		option.show = {
+			aniShow: 'pop-in'
+		}
+		option.url = url;
+		option.id = url;
+		if(params && $.type(params) == "object"){
+			option.extras = params;
+		}
+		$.openWindow(option);
 	}
 
 	/**

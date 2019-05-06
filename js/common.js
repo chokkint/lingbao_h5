@@ -2,9 +2,17 @@
  * 构建获取app资源根目录函数
  */
 function getContextPath() {
-	var url = document.location.toString();				
-	if(url.indexOf("/") != -1){
-		url = url.substring(0,  url.lastIndexOf("/")) ;
+	var url = document.location.toString();
+		
+	//Android手机获取项目根目录
+	if (url.indexOf("www") != -1) {
+		url = url.substring(0, url.lastIndexOf("www") + 3);
+	}else{
+		//浏览器获取项目根目录
+		var a = document.location.pathname.substring(1);
+		var b = a.indexOf("/");
+		var c =a.substring(0,b);
+		url = document.location.origin + "/" + c;
 	}
 	return url;
 }

@@ -3,16 +3,69 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>Hello MUI</title>
+		<title>Ling Bao</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		
+
 		<!-- 引用共通CSS文件 -->
 		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<!-- 引用共通JS文件 -->
+		<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
 		<style type="text/css">
 			/* 每个画面自定义的CSS样式 */
 		</style>
+		<script>
+			<!-- *****************当前画面自定义函数,变量区域***************** -->
+			
+			
+			
+			<!-- *****************当前画面初始化及事件处理区域***************** -->
+			(function(_M$, doc) {
+				_M$.init({
+					swipeBack: true //启用右滑关闭功能
+				});
+				_M$.plusReady(function() {
+
+					/* 接收调用画面传递的参数
+					*/
+					var self = plus.webview.currentWebview();
+					var name = self.name;//获得参数
+
+					/*  绑定事件样例
+					var telCustImpBtn = doc.getElementById('telCustImpBtn');
+					telCustImpBtn.addEventListener('tap', function(event) {
+						mui.confirm('发现99名联系人可关联客户','关联客户',['去关联', '暂不处理'],function (e) {
+							if(e.index == 0){  //e.index确定当前用户点击的是哪个按钮
+								//打开新页面
+								_M$.openWindow({
+									url: 'matchTelAndWxCust.html',
+									id: 'matchTelAndWxCust',
+									show: {
+										aniShow: 'pop-in'
+									},
+									extras: {    //extras里面的就是画面传递的参数了
+										name: "zqm"
+									}
+								});
+							}else{
+								_M$.openWindow({
+									url: 'indexMenu.html',
+									id: 'indexMenu',
+									show: {
+										aniShow: 'pop-in'
+									},
+									extras: {    //extras里面的就是画面传递的参数了
+										name: "zqm"
+									}
+								});
+							}
+						});
+					});
+					*/
+				});
+			}(mui, document));
+		</script>
 	</head>
 	<body>
 		<header class="mui-bar mui-bar-nav">
@@ -23,52 +76,24 @@
 		<div class="mui-content" style="padding-top: 31px;">
 			<!-- 每个画面实际内容 -->
 		</div>
+		
+		<!-- 当子画面中也有底部菜单Tab时(非共通菜单),直接写在当前画面底部 -->
+		
+		<div>
+			<nav class="mui-bar mui-bar-tab" id="nav">
+				<a id="action_tel" class="mui-tab-item mui-active">
+					<span class="mui-icon mui-icon-phone" style="color: #47BAFE;"></span>
+					<span class="mui-tab-label">电话联系</span>
+				</a>
+				<a id="action_weixin" class="mui-tab-item">
+					<span class="mui-icon fa fa-weixin" style="color: #4CD964;"></span>
+					<span class="mui-tab-label">微信联系</span>
+				</a>
+				<a id="action_love" class="mui-tab-item">
+					<span class="mui-icon fa fa-heart" style="color: #FF0000;"></span>
+					<span class="mui-tab-label">重点客户</span>
+				</a>
+			</nav>
+		</div>
 	</body>
-	<script src="../js/mui.js"></script>
-	<script>
-		(function($, doc) {
-			$.init({
-				swipeBack: true //启用右滑关闭功能
-			});
-			$.plusReady(function() {
-				
-				/* 接收调用画面传递的参数
-				var self = plus.webview.currentWebview();
-				var name = self.name;//获得参数
-				*/
-	
-				/*  绑定事件样例
-				var telCustImpBtn = doc.getElementById('telCustImpBtn');
-				telCustImpBtn.addEventListener('tap', function(event) {
-					mui.confirm('发现99名联系人可关联客户','关联客户',['去关联', '暂不处理'],function (e) {
-						if(e.index == 0){  //e.index确定当前用户点击的是哪个按钮
-							//打开新页面
-							$.openWindow({
-								url: 'matchTelAndWxCust.html',
-								id: 'matchTelAndWxCust',
-								show: {
-									aniShow: 'pop-in'
-								},
-								extras: {    //extras里面的就是画面传递的参数了
-									name: "zqm"
-								}
-							});
-						}else{
-							$.openWindow({
-								url: 'indexMenu.html',
-								id: 'indexMenu',
-								show: {
-									aniShow: 'pop-in'
-								},
-								extras: {    //extras里面的就是画面传递的参数了
-									name: "zqm"
-								}
-							});
-						}
-					});
-				});
-				*/
-			});
-		}(mui, document));
-	</script>
 </html>
