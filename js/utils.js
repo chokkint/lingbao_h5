@@ -69,7 +69,7 @@ function log(data) {
 		color: "#FF0000",
 		background: "rgba(0,0,0,0)",
 		loading: {
-			icon: "../images/loading.gif",
+			icon: "../../images/loading.gif",
 			display: "inline"
 		}
 	}
@@ -77,11 +77,11 @@ function log(data) {
 	/**
 	 * @description 新开窗口
 	 * @param {URIString} target  需要打开的页面的地址
-	 * @param {Object} parm 传递的对象
+	 * @param {Object} param 传递的对象
 	 * @param {Boolean} autoShow 是否自动显示
 	 * @example openNew({URIString});
 	 * */
-	owner.openNewWindow = function(target, parm, autoShow) {
+	owner.openNewWindow = function(target, param, autoShow) {
 		var currPageId = plus.webview.currentWebview().id;
 		var id = "index.html"; //除了一级目录，其它目录id组成结构为：二级文件夹/页面.html
 		if (currPageId != undefined) {
@@ -97,21 +97,20 @@ function log(data) {
 			}
 		}
 		var isAutoShow = autoShow || true;
-		log("currPageId=" + currPageId + " target=" + target + " id=" + id + " parm=" + JSON.stringify(parm) + " isAutoShow=" + isAutoShow);
+		log("currPageId=" + currPageId + " target=" + target + " id=" + id + " param=" + JSON.stringify(param) + " isAutoShow=" + isAutoShow);
 		$.openWindow({
 			url: target,
 			id: id,
 			show: {
 				autoShow: isAutoShow, //页面loaded事件发生后自动显示，默认为true
-				aniShow: 'pop-in',
-				duration: 200
+				aniShow: 'pop-in'
 			},
 			waiting: {
 				autoShow: true,
 				options: owner.waitingStyle
 			},
 			extras: {
-				info: parm
+				info: param
 			}
 		})
 	}

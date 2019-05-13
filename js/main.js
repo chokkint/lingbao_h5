@@ -39,7 +39,6 @@ mui.plusReady(function() {
 			plus.navigator.setStatusBarBackground('#fff');
 			plus.navigator.setStatusBarStyle('dark');
 		}
-		updatePKBtn(0);
 		if(targetTab == activeTab) {
 			return;
 		}
@@ -293,7 +292,6 @@ function createPKBtn() {
 
 	//自定义监听图标点击事件
 	pkbtn_def.addEventListener('click', function(e) {
-		updatePKBtn(1);
 		targetTab = "services/services.html";
 		plus.navigator.setStatusBarBackground('#13D1BE');
 		plus.navigator.setStatusBarStyle('light');
@@ -313,16 +311,6 @@ function createPKBtn() {
 
 	});
 
-}
-
-function updatePKBtn(type) {
-	//	if(type == 1) { //显示活动
-	//		pkbtn_def.hide();
-	//		pkbtn_activity.show();
-	//	} else { //显示默认
-	//		pkbtn_def.show();
-	//		pkbtn_activity.hide();
-	//	}
 }
 
 // 检测更新
