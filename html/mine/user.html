@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link href="../../css/icons-extra.css" rel="stylesheet" />
+		<link href="../../libs/font-awesome/css/font-awesome.css" rel="stylesheet" />
+		
+		<style>
+			.mui-bar div a {
+				color: white;
+			}
+			.floatLeft div {
+				float: left;
+			}
+			.mui-bar-nav.mui-bar .mui-icon{
+				margin-left: 0px;
+				margin-right: 0px;
+			}
+		</style>
+	</head>
+ 
+	<body>
+		<header class="mui-bar mui-bar-nav" style="height:240px;background-color: #47BAFE;">
+			<div style="height: 50px; width: 100%; text-align: right;">
+				<div>
+					<a href="#">
+						<span class="mui-icon mui-icon-gear" style="font-size: 25px;top: 5px;"></span>
+						<span class="mui-icon mui-icon-extra mui-icon-extra-notice" style="font-size: 25px;top: 5px;"></span>
+					</a>
+				</div>
+			</div>
+			<div class="floatLeft" style="height: 145px;">
+				<div style="width: 25%;">
+					<div>
+						<a href="#"><span class="mui-icon mui-icon-contact" style="font-size: 550%; padding-left: 0px;"></span></a>
+					</div>
+				</div>
+				<div style="width: 50%;">
+					<div style="margin-top: 15px; width: 100%;">
+						<a href="#">
+							<span style="font-size: 30px;top: 20px;">风清扬</span>
+							<span style="font-size: 15px;top: 30px;">普通会员</span>
+						</a>
+					</div>
+					<div style="width: 100%;padding-top: 10px;">
+						<a href="#">
+							<span style="font-size: 13px;top: 20px;">活跃分数75</span>
+							<!-- <p class="mui-progressbar mui-progressbar-in" style="height: 15px;background-color: white;" data-progress="75">75</p> -->
+							<div id="demo1" class="mui-progressbar" style="height: 15px;">
+								<span style="background-color: white;color: #007AFF;" ></span>
+							</div>
+						</a>
+					</div>
+					<div style="width: 100%;padding-top: 10px;">
+						<a href="#">
+							<span class="mui-icon-extra mui-icon-extra-custom" style="font-size: 25px;top: 5px;"></span>
+							<span style="font-size: 13px;top: 30px;">升级VIP会员，只能销售专家随身</span>
+						</a>
+					</div>
+				</div>
+				<div style="width: 25%; padding: 20px; margin-left: -10px;">
+					<div>
+						<a href="#"><span class="fa fa-qrcode" style="font-size: 550%;top: 50px;"></span></a>
+					</div>
+				</div>
+			</div>
+			<div class="floatLeft" style="height: 5px; text-align: right;">
+				<div style="width: 30%;">
+					<a href="#">
+						<span class="fa fa-check-circle-o" style="font-size: 20px;"></span>
+						<span style="font-size: 15px;">实名认证</span>
+					</a>
+				</div>
+				<div style="width:50%; text-align: left; padding-left: 15px;">
+					<a href="#">
+						<span class="fa fa-check-circle-o" style="font-size: 20px;"></span>
+						<span style="font-size: 15px;">MDRT会员认证</span>
+					</a>
+				</div>
+				<div style="width:20%; padding-right: 10px;">
+					<a href="#">
+						<span style="font-size: 15px;">编辑</span>
+						<span class="fa fa-angle-right" style="font-size: 20px;"></span>
+					</a>
+				</div>
+			</div>
+		</header>
+		<div class="mui-content" style="padding-top: 240px;">
+			<div id="home_content" class="mui-control-content mui-active">
+				<ul class="mui-table-view" style="color: dimgray;font-size: 20px;padding: 5px 0px;">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span class="mui-icon-extra mui-icon-extra-topic"></span>
+							<span>个人主页管理</span>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span class="mui-icon-extra mui-icon-extra-trend"></span>
+							<span>查看销售业绩报表</span>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span class="mui-icon-extra mui-icon-extra-order"></span>
+							<span>查看我的行动报表</span>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span class="mui-icon-extra mui-icon-extra-card"></span>
+							<span>升级VIP会员</span>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="../setting.html">
+							<span class="mui-icon mui-icon-gear"></span>
+							<span>设置</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script src="../../js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function(){
+				mui("#demo1").progressbar({progress:75}).show();
+			});
+		</script>
+	</body>
+</html>

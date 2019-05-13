@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>LingBao</title>
+		<script type="text/javascript">
+			//打开引导
+			var firstGuide = localStorage.getItem("guide");
+			if (firstGuide != "yes") {
+				window.location.href = 'guide.html'; //启动引导页
+			}
+		</script>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+	</head>
+
+	<body>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item mui-active" data-href="home/home.html" data-index="0">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" data-href="customer/customer.html" data-index="1">
+				<span class="mui-icon mui-icon-extra mui-icon-extra-peoples"></span>
+				<span class="mui-tab-label">客户</span>
+			</a>
+			<a class="mui-tab-item" data-href="services/services.html" style="overflow: visible;">
+				<span class="mui-icon mui-icon-extra mui-icon-extra-class"></span>
+				<span class="mui-tab-label">服务</span>
+			</a>
+			<a class="mui-tab-item" data-href="mine/user.html" data-index="4">
+				<span class="mui-icon fa fa-user-o"></span>
+				<span class="mui-tab-label">我的</span>
+			</a>
+		</nav>
+	</body>
+	<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>Ling Bao</title>
+		<script src="js/mui.js"></script>
+		<link href="css/mui.css" rel="stylesheet" />
+		<link href="css/icons-extra.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init({
+				subpages: [ //首先加载首页
+					{
+						url: 'pages/home.html',
+						id: 'tab_home',
+						styles: {
+							top: '0px',
+							bottom: '60px'
+						}
+					}
+				],
+				preloadPages: [ //预加载其他页面
+					{
+						url: 'pages/valuedCust.html',
+						id: 'tab_valuedCust',
+						styles: {
+							top: '0px',
+							bottom: '60px'
+						}
+					},
+					{
+						url: 'pages/functionBox.html',
+						id: 'tab_functionBox',
+						styles: {
+							top: '0px',
+							bottom: '60px'
+						}
+					},
+					{
+						url: 'pages/myProfile.html',
+						id: 'tab_myProfile',
+						styles: {
+							top: '0px',
+							bottom: '60px'
+						}
+					}
+				]
+			});
+			mui.plusReady(function() {
+				var tab_home, tab_valuedCust, tab_functionBox, tab_myProfile;
+				mui("#nav").on("tap", "#tab_home", function() { //点击触发
+					tab_home = plus.webview.getWebviewById("tab_home");
+					tab_valuedCust = plus.webview.getWebviewById("tab_valuedCust");
+					tab_functionBox = plus.webview.getWebviewById("tab_functionBox");
+					tab_myProfile = plus.webview.getWebviewById("tab_myProfile");
+					tab_home.show();
+					tab_valuedCust.hide();
+					tab_functionBox.hide();
+					tab_myProfile.hide();
+				})
+				mui("#nav").on("tap", "#tab_valuedCust", function() { //点击触发
+					tab_home = plus.webview.getWebviewById("tab_home");
+					tab_valuedCust = plus.webview.getWebviewById("tab_valuedCust");
+					tab_functionBox = plus.webview.getWebviewById("tab_functionBox");
+					tab_myProfile = plus.webview.getWebviewById("tab_myProfile");
+					tab_home.hide();
+					tab_valuedCust.show();
+					tab_functionBox.hide();
+					tab_myProfile.hide();
+				})
+				mui("#nav").on("tap", "#tab_functionBox", function() { //点击触发
+					tab_home = plus.webview.getWebviewById("tab_home");
+					tab_valuedCust = plus.webview.getWebviewById("tab_valuedCust");
+					tab_functionBox = plus.webview.getWebviewById("tab_functionBox");
+					tab_myProfile = plus.webview.getWebviewById("tab_myProfile");
+					tab_home.hide();
+					tab_valuedCust.hide();
+					tab_functionBox.show();
+					tab_myProfile.hide();
+					// plus.webview.open('pages/custNews.html', 'new', {}, 'slide-in-right', 200);
+				});
+				mui("#nav").on("tap", "#tab_myProfile", function() { //点击触发
+					tab_home = plus.webview.getWebviewById("tab_home");
+					tab_valuedCust = plus.webview.getWebviewById("tab_valuedCust");
+					tab_functionBox = plus.webview.getWebviewById("tab_functionBox");
+					tab_myProfile = plus.webview.getWebviewById("tab_myProfile");
+					tab_home.hide();
+					tab_valuedCust.hide();
+					tab_functionBox.hide();
+					tab_myProfile.show();
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<nav class="mui-bar mui-bar-tab" id="nav">
+			<a id="tab_home" class="mui-tab-item mui-active">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a id="tab_valuedCust" class="mui-tab-item">
+				<span class="mui-icon mui-icon-extra mui-icon-extra-peoples"></span>
+				<span class="mui-tab-label">客户精选</span>
+			</a>
+			<a id="tab_functionBox" class="mui-tab-item">
+				<span class="mui-icon mui-icon-extra mui-icon-extra-class"></span>
+				<span class="mui-tab-label">百宝箱</span>
+			</a>
+			<a id="tab_myProfile" class="mui-tab-item">
+				<span class="mui-icon fa fa-user-o"></span>
+				<span class="mui-tab-label">我的</span>
+			</a>
+		</nav>
+	</body>
+</html>

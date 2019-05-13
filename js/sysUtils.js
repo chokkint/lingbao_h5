@@ -19,3 +19,29 @@ Date.prototype.Format = function(fmt) {
 			fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
 	return fmt;
 }
+
+/**
+ * @description 为Array扩展contains方法
+ * @param {String} str 需要是否已经在数组中存在的那个值
+ * @example if(Arr.contains('str')); //返回true||false
+ * */
+Array.prototype.contains = function(str) {
+	var i = this.length;
+	while(i--) {
+		if(this[i] === str) {
+			return true;
+		}
+	}
+	return false;
+}
+/*替换空格*/
+　
+String.prototype.trim = function() {　　
+	return this.replace(/(^\s*)|(\s*$)/g, "");　　
+}　　
+String.prototype.ltrim = function() {　　
+	return this.replace(/(^\s*)/g, "");　　
+}　　
+String.prototype.rtrim = function() {　　
+	return this.replace(/(\s*$)/g, "");　　
+}
